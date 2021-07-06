@@ -1,0 +1,15 @@
+
+*.rtf
+*.icloud
+
+
+npm-debug.log
+.DS_Store
+node_modules/
+output/
+.vscode/
+_book/
+*.epub
+*.pdf
+*.mobi
+*.history

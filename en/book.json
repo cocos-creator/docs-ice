@@ -1,0 +1,30 @@
+{
+    "structure": {
+        "summary": "SUMMARY.md",
+        "readme": "index.md"
+    },
+    "variables": {
+        "products": [
+            {
+                "name": "Cocos ICE",
+                "links": [
+                    {
+                        "name": "Manual",
+                        "link": "https://docs.cocos.com/ice/1.0/manual/en"
+                    }
+                ]
+            }
+        ],
+        "version": [
+            {
+                "name": "1.0",
+                "links": [
+                    {
+                        "name": "1.0-release",
+                        "link": "https://docs.cocos.com/ice/1.0/manual/en"
+                    }
+                ]
+            }
+        ]
+    }
+}

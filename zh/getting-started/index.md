@@ -4,7 +4,9 @@ Cocos ICE 互动课件编辑器（全称 **Cocos Interactive Courseware Editor**
 
 ## 1. 新手上路
 
-- 下载安装。访问 [Cocos 产品首页](链接地址)，下载 Cocos ICE（下面简称 ICE）安装包，具体的安装步骤请查看下文 **安装与启动** 部分的内容。
+- 获取安装包。**联系商务** 获取最新安装包（联系方式见下图），具体的安装步骤请查看下文 **安装与启动** 部分的内容。
+
+    ![联系方式](img/we_chat.png)
 
 - 注册账号。运行 ICE ，在登录页点击 **账号注册**，跳转浏览器完成注册。
 
@@ -12,15 +14,17 @@ Cocos ICE 互动课件编辑器（全称 **Cocos Interactive Courseware Editor**
 
 - 最后，登入，开始使用。审核通过后，返回 ICE 登录页，完成登录。
 
-> **注意**：Cocos ICE 的使用前提是获取 [License](../License/index-1.md)，若存疑请咨询商务，联系方式如下：
-
-> ![联系方式](img/we_chat.png)
+> **注意**：Cocos ICE 的使用前提是获取 [License](../License/index-1.md)，若存疑请咨询商务。
 
 ## 2. 安装与启动
 
-用户可以通过访问 Cocos 产品首页，下载 Cocos ICE 的安装包。
+获取安装包后，双击安装包，运行软件。
 
-下载完成后双击安装包，运行软件。
+### 操作系统要求
+
+Cocos ICE 所支持的系统环境是：
+- macOS 所支持的最低版本是 OS X 10.9。
+- Windows 所支持的最低版本是 Windows 7 64 位。
 
 ### Windows 安装说明
 
@@ -31,12 +35,6 @@ Windows 版的安装程序是一个 .exe 可执行文件，通常命名会是 `C
 Mac 版 Cocos ICE 的安装程序是 dmg 镜像文件，双击 dmg 文件，然后将 `Cocos ICE.app` 拖拽到用户的应用程序文件夹快捷方式，或任意其他位置。然后双击拖拽出来的 `Cocos ICE.app` 就可以开始使用了。
 
 > **注意** ：Mac 平台如果从 zip 解压安装，解压后请移动到任意一个文件夹。这是 Mac 的限制，解压后若不移动文件位置，系统会识别它仍然在临时文件夹，导致运行失败。
-
-### 操作系统要求
-
-Cocos ICE 所支持的系统环境是：
-- macOS 所支持的最低版本是 OS X 10.9。
-- Windows 所支持的最低版本是 Windows 7 64 位。
 
 ## 3. 软件概览
 

@@ -10,7 +10,7 @@ Cocos ICE 互动课件编辑器（全称 **Cocos Interactive Courseware Editor**
 
 - 加入公司。返回 ICE 登录页，输入账号密码，点击登入后，出现 **点击加入** 提示，按提示提交加入申请。
 
-- 最后，登入，开始使用。审核通过后，返回ICE登录页，完成登录。
+- 最后，登入，开始使用。审核通过后，返回 ICE 登录页，完成登录。
 
 > **注意**：Cocos ICE 的使用前提是获取 [License](../License/index-1.md)，若存疑请咨询商务，联系方式如下：
 

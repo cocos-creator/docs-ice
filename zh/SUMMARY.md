@@ -14,7 +14,6 @@
     - [上传和发布](getting-started/publish-lesson/index.md)
     - [获取帮助和支持](getting-started/help/index.md)
 - [发版说明](version-info/index.md)
-    - [升级指南](version-info/update/index.md)
 
 ## 编辑器手册
 
@@ -27,27 +26,21 @@
         - [音频](tools/object/audio/index.md)
         - [视频](tools/object/video/index.md)
     - [互动组件](tools/component/index.md)
-- [素材库](/resource/index.md)
-- [事件](action/index.md)
-    - [动效](action/effect/index.md)
-    - [页面跳转](action/navigation/index.md)
-    - [视频事件](action/video-action/index.md)
-    - [自定义事件]((action/custom-aciton/index.md))
+- [素材库](resource/index.md)
+- [事件](event/index.md)
+- [模式](mode/index.md)
 - [互动视频制作](make-interactive-video/index.md)
-- [快捷操作键](shortcut-key/index.md)
 
 ## 研发手册
 
 - [配置信息](developer/configure/index.md)
-    - [分辨率](developer/configure/resolution/index.md)
-    - [属性分组](developer/configure/properties-groups/index.md)
-    - [文字属性](developer/configure/word-properties/index.md)
-    - [颜色预设](developer/configure/color-preset/index.md)
-    - [多端控制](developer/configure/multi-device-control/index.md)
+    - [服务端配置](developer/configure/server/index.md)
+    - [分辨率配置](developer/configure/resolution/index.md)
+    - [属性分组配置](developer/configure/properties-groups/index.md)
 - [自定义组件](developer/develop-component/index.md)
     - [自定义属性](developer/develop-component/develop-properties/index.md)
     - [节点设置](developer/develop-component/node-setting/index.md)
-- [自定义事件](developer/develop-action/index.md)
+- [自定义事件](developer/develop-event/index.md)
 - [扩展右键菜单](developer/menu-extension/index.md)
-- [自定义面板](developer/develop-board/index.md)
+- [自定义面板](developer/develop-panel/index.md)
 - [构建发布](developer/build/index.md)

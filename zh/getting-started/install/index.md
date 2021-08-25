@@ -48,7 +48,7 @@ Mac 版 Cocos ICE 的安装程序是一个 `.zip` 压缩包，通常命名会是
 #### 1. 打开编辑器文件夹
 
 - Windows 打开 `Cocos ICE.exe` 所在的文件夹。
-- Mac 右键 `Cocos ICE.app` ，点击 **显示包内容** 。
+- Mac 右键 `Cocos ICE.app` ，点击 **显示包内容**。
 
 #### 2. 配置信息
 

@@ -2,7 +2,7 @@
 
 ## 介绍
 
-在介绍事件系统之前，有必要需要统一一下术语，如下图所示，我们将每个事件分解为3部分：
+在介绍事件系统之前，有必要统一一下术语，如下图所示，我们将每个事件分解为 3 部分：
 
 ![事件](img/event.png)
 
@@ -46,7 +46,7 @@ eventLibrary.registerEvent({
 });
 ```
 
-使用`eventLibrary.registerEvent`接口，即可注册一个事件，具体的参数如下：
+使用 `eventLibrary.registerEvent` 接口，即可注册一个事件，具体的参数说明如下：
 
 - name:
 在UI面板上，展示的事件名字，如果名字中带有分隔符`/`，会自动解析为级联菜单
@@ -71,7 +71,7 @@ eventLibrary.registerEvent({
 - unacceptedActions：
     - 设置该事件排除的动作
 
-### 关于EventClickSelfEmitter
+### 关于 EventClickSelfEmitter
 
 每个事件都有一个配套的触发器，需要开发者自行实现触发的逻辑，当调用`node.emit('event.type')`时，与之绑定的动作就会被执行。
 

@@ -45,7 +45,7 @@ export interface ICustomComponent {
 
 ## 自定义组件的扫描规则
 
-- 自定义组件默认会扫描 `db://assets` 、`db://edu-editor-component`、`db://edu-component-external` 、`自定义 db`，里面的所有 `desc.json` 文件并根据类型（type）进行分类，在组件的 UI 和页面模板的 UI 进行分类显示
+自定义组件默认会扫描 `db://assets`、`db://edu-editor-component`、`db://edu-component-external`、`自定义 db`，里面所有的 `desc.json` 文件会根据类型（type）进行分类，并在组件的 UI 和页面模板的 UI 进行分类显示。
 
 ## 研发自定义组件
 

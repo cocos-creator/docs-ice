@@ -4,20 +4,20 @@
 
 如果一个属性想要在属性面板中显示，必须满足以下规则：
 
-1. 脚本必须继承`EduElementAbstract`
-2. 必须使用@eduProperty定义属性
+1. 脚本必须继承 `EduElementAbstract`
+2. 必须使用 `@eduProperty` 定义属性
 
-> 注意： EduNodeProp，EduCompProp，暂时不支持！
+> **注意**：`EduNodeProp`、`EduCompProp` 暂时不支持！
 
-## 举个例子
+## 示例
 
-EduElement脚本本自身也遵守该规则：
+`EduElement` 脚本自身也遵守该规则：
 
 ```
 import { eduProperty, i18n } from "education";
 import EduElementAbstract from 'EduElementAbstract'
 
-// 继承自EduElementAbstract
+// 继承自 EduElementAbstract
 export default class EduElement extends EduElementAbstract {
 
   // ....
@@ -39,7 +39,7 @@ export default class EduElement extends EduElementAbstract {
 }
 ```
 
-然后给节点添加`EduElement`脚本，最终属性面板会默认将`EduElement`的attribute属性默认显示在`排版`中：
+然后将 `EduElement` 脚本添加到节点上，属性面板便会默认将 `EduElement` 的 `attribute` 属性显示在 **排版** 中：
 
 ![enter image description here](/tdl/tfl/pictures/202106/tapd_68212706_1623761998_11.png)
 
@@ -76,7 +76,7 @@ export default class EduElement extends EduElementAbstract {
 
 > 关于折叠组件的head(`EduImage`)自定义，需要进一步完善。
 
-## @eduProperty参考字段
+## `@eduProperty` 参考字段
  
 |字段|说明|
 |--|--|

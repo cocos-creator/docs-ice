@@ -2,11 +2,11 @@
 
 ## 1. 下载 Cocos ICE
 
-- 如果您的公司尚未使用过 Cocos ICE，您可以 **联系官方人员** 获取最新版本的 Cocos ICE 安装包试用（联系方式见下图）。
+- 如果您的公司尚未使用过 Cocos ICE，请 **联系官方人员** 获取最新版本的 Cocos ICE 安装包试用，联系方式见下图：
 
     ![联系方式](../img/we_chat.png)
 
-- 如果您的公司已购买 Cocos ICE，您可以 **联系公司相关负责人** 获取 Cocos ICE 安装包。
+- 如果您的公司已购买 Cocos ICE，请 **联系公司相关负责人** 获取 Cocos ICE 安装包。
 
 ## 2. 安装与启动
 
@@ -48,16 +48,16 @@ Mac 版 Cocos ICE 的安装程序是一个 `.zip` 压缩包，通常命名会是
 #### 1. 打开编辑器文件夹
 
 - Windows 打开 `Cocos ICE.exe` 所在的文件夹。
-- Mac 右键 `Cocos ICE.app` ，点击 **显示包内容**。
+- Mac 右键 `Cocos ICE.app`，点击 **显示包内容**。
 
 #### 2. 配置信息
 
-- global 全局配置信息：打开 `home/.EduEditor/settings/edu-settings.json` ，配置全局信息。
-- editor 编辑器配置信息：打开 `编辑器/builtin/edu-editor/.EduEditor/settings/edu-settings.json` ，配置编辑器信息。
+- global 全局配置信息：打开 `home/.EduEditor/settings/edu-settings.json`，配置全局信息。
+- editor 编辑器配置信息：打开 `编辑器/builtin/edu-editor/.EduEditor/settings/edu-settings.json`，配置编辑器信息。
 - project 项目配置信息：打开 `项目/settings/edu-settings.json` 配置项目设置。
 
 详细配置说明见 [**配置信息**](../../developer/configure/index.md) 。
 
 #### 3. 二次打包分发
 
-配置完成后，研发可以将 Windows 的编辑器文件夹或 Mac的 `Cocos ICE.app` 压缩为 `.zip` 压缩包，统一分发给公司使用 ICE 编辑器的人员。
+配置完成后，研发可以将 Windows 的编辑器文件夹或 Mac 的 `Cocos ICE.app` 压缩为 `.zip` 压缩包，统一分发给公司使用 ICE 编辑器的人员。

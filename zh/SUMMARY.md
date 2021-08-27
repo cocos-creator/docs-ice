@@ -13,7 +13,7 @@
     - [互动视频制作](getting-started/make-interactive-video/index.md)
     - [上传和发布](getting-started/publish-lesson/index.md)
     - [获取帮助和支持](getting-started/help/index.md)
-- [发版说明](version-info/index.md)
+- [版本更新说明](version-info/index.md)
 
 ## 编辑器手册
 

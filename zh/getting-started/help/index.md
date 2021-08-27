@@ -8,4 +8,4 @@
 
     - [Cocos 论坛社区](https://forum.cocos.org/c/58)
     - [Cocos 技术支持](https://www.cocos.com/support)
-    - 参考 [如何在 GitHub 上向 Creator 提交代码](../submit-pr/submit-pr.md) 来提交你的修改。
+    - 参考 [如何在 GitHub 上向 Creator 提交代码](https://docs.cocos.com/creator/manual/zh/submit-pr/submit-pr.html) 来提交你的修改。

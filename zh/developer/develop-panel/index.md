@@ -2,7 +2,7 @@
 
 ## 1、自定义面板的入口声明
 
-自定义面板的接入需要依赖于 cocos 的脚本组件，在 cocos 的脚本组件中定义指定的入口,以及对应的属性，并且把对应的脚本挂载到需要显示的组件上
+自定义面板的接入需要依赖于 Cocos 的脚本组件，在 Cocos 的脚本组件中定义指定的入口,以及对应的属性，并且把对应的脚本挂载到需要显示的组件上
 
 ```js
     const {ccclass, property, inspector} = cc._decorator;
@@ -41,7 +41,7 @@
 
 ## 2、自定义面板的组件编写
 
-目前自定义面板支持 vue 组件的写法，因为是外联组件，不加入 cocos 本身的编译，所以组件需要采用 common.js 写法，并且完成好的组件是 es5 语法才能正确的接入项目
+目前自定义面板支持 Vue 组件的写法，因为是外联组件，不加入 Cocos 本身的编译，所以组件需要采用 `common.js` 写法，并且完成好的组件是 ES5 语法才能正确的接入项目。
 
 1. js的入口
 
@@ -50,10 +50,10 @@
 
     const fs = require('fs');
 
-    //引入template模板
+    //引入 template 模板
     const template = fs.readFileSync(path.join(__dirname, './template.html'), 'utf-8');
 
-    //引入样式文件，目前整个自定义面板的ui是写在一个css文件中
+    //引入样式文件，目前整个自定义面板的 UI 是写在一个 css 文件中
     exports.style = fs.readFileSync(path.join(__dirname, './style.css'), 'utf-8');
 
     // 引入自定义组年
@@ -67,7 +67,7 @@
         name: 'CheckUi',
         template,
         components: {NumberItem, ImageItem, ...},
-        props: ['target', 'root'], //这里接收两个参数，target与root,是从面板回传的组件属性
+        props: ['target', 'root'], //这里接收两个参数，target 与 root,是从面板回传的组件属性
         methods: {
             getCompType(type) {
                 switch (type) {
@@ -80,9 +80,9 @@
     };
     ```
 
-    - 因为没有办法参数编辑，所以模块的导出需要暴露两个文件，一个是读取后的 style 文本，在 cocos 内部会把指定的 style 文本添加到样式中，一个是 vue 组件。
+    - 因为没有办法参数编辑，所以模块的导出需要暴露两个文件，一个是读取后的 style 文本，在 Cocos 内部会把指定的 style 文本添加到样式中，一个是 Vue 组件。
 
-    > **注意**：这里的exports 出来的组件名称需要与入口声明的 @inspector 中的类名一致，不然内部无法正确注册 vue 组件。
+    > **注意**：这里的 exports 出来的组件名称需要与入口声明的 @inspector 中的类名一致，不然内部无法正确注册 Vue 组件。
 
     - **在入口处组件接收两个参数，target 与 root 是面板回传的自定义属性，可以根据这些自定义属性定制自己的 ui**。
 
@@ -99,9 +99,9 @@
     </div>
     ```
 
-    > template的编写对应 vue 里的 template 的写法
+    > template 的编写对应 Vue 里的 template 的写法
 
-3. css样式的编写
+3. css 样式的编写
 
     目前样式的写法只支持 css 的写法，并且当前所有的父组件以及子组件的样式都统一归类写在这里。
 
@@ -111,7 +111,7 @@
 
 ### `index.js` 需要自定义一个 customElement，以下是必备写法（其他的都可以参照 html 写法）
 
-````
+```
 class LoginFrame extends window.HTMLElement {
    static name = 'edu-login-frame'; // <--- 必须有，name 可以顺意取
    //... 内容写法跟 html 一样
@@ -122,7 +122,7 @@ if (!window.customElements.get(LoginFrame.name)) {
 }
 // 必须要，否则无法把自定义登录元素显示在窗口内
 module.exports = LoginFrame;
-````
+```
 
 ### 登录 API 为 `Editor.User.login`
 

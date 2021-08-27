@@ -2,8 +2,8 @@
 
 ## 配置类型
 
-- global 全局配置信息，放在 `home/.EduEditor/settings/edu-settings.json` ，用来存放全局信息。
-- editor 编辑器配置信息，放在 编辑器 `/builtin/edu-editor/.EduEditor/settings/edu-settings.json` ，用来放置编辑器信息。
+- `global` 全局配置信息，存放在 `home/.EduEditor/settings/edu-settings.json` 文件中。
+- `editor` 编辑器配置信息，存放在编辑器目录的 `/builtin/edu-editor/.EduEditor/settings/edu-settings.json` 文件中。
 - project 项目配置信息，放在 项目 `/settings/edu-settings.json` 用来存放项目设置。
 
 ## 目前支持的配置

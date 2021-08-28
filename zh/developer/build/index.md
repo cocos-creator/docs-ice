@@ -20,7 +20,7 @@ export enum BundleCompressType {
  * bundle 的配置
  */
 export interface IBundle {
-    root: string;//db的路径
+    root: string;//db 的路径
     name: string;//bundle 的名字
     outputDir: string;//输出目录
     priority: number;//优先级

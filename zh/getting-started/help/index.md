@@ -4,7 +4,7 @@
 
     ![联系方式](../img/we_chat.png)
 
-- 如果您有 Cocos ICE 研发模式或 Cocos Creator 相关问题可以查看 [**Cocos Creator 用户手册**](https://docs.cocos.com/creator/manual/zh/getting-started/support.html) ，或随时通过下面的渠道获取信息或反馈问题给 Cocos Creator 开发团队：
+- 如果您有 Cocos ICE 研发模式或 Cocos Creator 相关问题可以查看 [**Cocos Creator 用户手册**](https://docs.cocos.com/creator/manual/zh/publish/) ，或随时通过下面的渠道获取信息或反馈问题给 Cocos Creator 开发团队：
 
     - [Cocos 论坛社区](https://forum.cocos.org/c/58)
     - [Cocos 技术支持](https://www.cocos.com/support)

@@ -12,4 +12,4 @@
 
 目前发布课程需要在研发模式下操作，建议由研发同学来执行：
 
-点击 **菜单栏** 的 **模式** 切换到 **研发模式**，即可使用 Cocos Creator 2.4.6 。从 **课程广场** 下载需要发布的老师制作好的课程后，选择相应课程构建发布。具体操作可通过 [**Cocos Creator 用户手册**](https://docs.cocos.com/creator/manual/zh/getting-started/basics/preview-build.html) 进行学习。
+点击 **菜单栏** 的 **模式** 切换到 **研发模式**，即可使用 Cocos Creator 2.4.6 。从 **课程广场** 下载需要发布的老师制作好的课程后，选择相应课程构建发布。具体操作可通过 [**Cocos Creator 用户手册**](https://docs.cocos.com/creator/manual/zh/publish/) 进行学习。

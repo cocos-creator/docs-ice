@@ -54,23 +54,26 @@ eventLibrary.registerEvent({
 
 ![级联菜单](img/event_menu.png)
 
-- type：当事件触发时，对外抛出的事件名
-- visible：如果事件不想出现在列表中，需要设置为 `false`，默认为 `true`。
-- requiredComponent：每一个事件都需要绑定一个类似触发器的脚本，用来编写事件是如何触发的，触发事件一般采用 `node.emit('event.type')`。
-- acceptedComponents：
-    - 添加事件的节点必须拥有指定组件（一般为继承自cc.Component的组件）时，才能添加该事件。
-    - 当未设置该参数时，事件的添加不受节点脚本的影响。
+- `name`：在 UI 面板上展示的事件名字，如果名字中带有分隔符 `/`，会自动解析为级联菜单。
 
-- target：事件的触发目标类型
-    - Self：添加事件的节点自身
-    - Any：任意地方
-    - Page：页面
+  ![级联菜单](img/event_menu.png)
 
-- acceptedActions：
-    - 设置该事件可选的动作
-    - 当该参数未设置时，默认所有动作可选
-- unacceptedActions：
-    - 设置该事件排除的动作
+- `type`：当事件触发时，对外抛出的事件名。
+
+- `visible`：默认为 `true`。如果事件不想出现在列表中，需要将其设置为 `false`。
+
+- `requiredComponent`：每一个事件都需要绑定一个类似触发器的脚本，用来编写事件是如何触发的，触发事件一般采用 `node.emit('event.type')`。
+
+- `acceptedComponents`：添加事件的节点必须拥有指定组件（一般为继承自 `cc.Component` 的组件）时，才能添加该事件。若该参数未设置，则事件的添加不受节点脚本的影响。
+
+- `target`：事件的触发目标类型。
+    - `Self`：添加事件的节点自身。
+    - `Any`：任意地方。
+    - `Page`：页面。
+
+- `acceptedActions`：设置该事件可选的动作。当该参数未设置时，默认所有动作可选。
+
+- `unacceptedActions`：设置该事件排除的动作。
 
 ### 关于 EventClickSelfEmitter
 
@@ -115,17 +118,17 @@ export default class VideoPlayAction extends Action {
 
 - page
 
-![页面跳转](img/event_page.png)
+    ![页面跳转](img/event_page.png)
 
-`page` 目前应用在页面跳转的跳转页面参数上，`enumListType='page'` 时，该属性会自动变为带可选值的下拉框类型，供用户选择。
+    `page` 目前应用在页面跳转的跳转页面参数上，`enumListType='page'` 时，该属性会自动变为带可选值的下拉框类型，供用户选择。
 
-可选值来自当前课程的所有页面。
+    可选值来自当前课程的所有页面。
 
 - video
 
-`video` 目前应用在播放视频动作的播放目标，`enumListType='video'` 时，该属性会自动变为带可选值的下拉框类型，供用户选择。
+    `video` 目前应用在播放视频动作的播放目标，`enumListType='video'` 时，该属性会自动变为带可选值的下拉框类型，供用户选择。
 
-可选值来自当前page的所有视频。
+    可选值来自当前page的所有视频。
 
 ## 自定义动效
 

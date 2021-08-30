@@ -57,10 +57,10 @@ internal: {
 
 // 一些接口的继承配置
 implements: {
-    // 课程广场- IProject 的实现
+    // 课程广场 - IProject 的实现
     project: '',
     // project: 'packages://edu-editor/dist/edu/project/ProjectServer',
-    // 课程广场- IPage 的实现
+    // 课程广场 - IPage 的实现
     page: '',
     // page: 'packages://edu-editor/dist/edu/page/PageServer'
 },

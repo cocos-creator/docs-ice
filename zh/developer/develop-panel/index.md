@@ -2,7 +2,7 @@
 
 ## 1、自定义面板的入口声明
 
-自定义面板的接入需要依赖于 Cocos 的脚本组件，在 Cocos 的脚本组件中定义指定的入口,以及对应的属性，并且把对应的脚本挂载到需要显示的组件上
+自定义面板的接入需要依赖于 Cocos Creator 的脚本组件，在 Cocos Creator 的脚本组件中定义指定的入口,以及对应的属性，并且把对应的脚本挂载到需要显示的组件上
 
 ```js
     const {ccclass, property, inspector} = cc._decorator;
@@ -50,10 +50,10 @@
 
     const fs = require('fs');
 
-    //引入 template 模板
+    // 引入 template 模板
     const template = fs.readFileSync(path.join(__dirname, './template.html'), 'utf-8');
 
-    //引入样式文件，目前整个自定义面板的 UI 是写在一个 css 文件中
+    // 引入样式文件，目前整个自定义面板的 UI 是写在一个 css 文件中
     exports.style = fs.readFileSync(path.join(__dirname, './style.css'), 'utf-8');
 
     // 引入自定义组年
@@ -67,7 +67,7 @@
         name: 'CheckUi',
         template,
         components: {NumberItem, ImageItem, ...},
-        props: ['target', 'root'], //这里接收两个参数，target 与 root,是从面板回传的组件属性
+        props: ['target', 'root'], // 这里接收两个参数，target 与 root,是从面板回传的组件属性
         methods: {
             getCompType(type) {
                 switch (type) {

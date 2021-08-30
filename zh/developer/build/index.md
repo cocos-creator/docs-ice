@@ -20,13 +20,13 @@ export enum BundleCompressType {
  * bundle 的配置
  */
 export interface IBundle {
-    root: string;//db的路径
-    name: string;//bundle 的名字
-    outputDir: string;//输出目录
-    priority: number;//优先级
-    compressType: BundleCompressType//压缩类型
+    root: string; // db 的路径
+    name: string; // bundle 的名字
+    outputDir: string; // 输出目录
+    priority: number; // 优先级
+    compressType: BundleCompressType // 压缩类型
 }
-//打包示例
+// 打包示例
 await edu.Bundle.build([
 {
     "root": "db://assets/images",

@@ -28,14 +28,14 @@ export enum TabType {
  * 组件定义的格式
  */
 export interface ICustomComponent {
-    prefab: string; // prefab的db的路径或者相对路径
+    prefab: string; // prefab 的 db 的路径或者相对路径
     icon: string; // 显示的图片路径
     type: ComponentsType; // 类型
-    typeOrder?: number; // type的排序，数字越大放越后面
+    typeOrder?: number; // type 的排序，数字越大放越后面
     tab: TabType | string; // 页签（分组）
     tabOrder?: number; // tab 的排序，数字越大，放越后面
     group?: string; // 子分组
-    groupOrder?: number; // group的排序，数字越大，放越后面
+    groupOrder?: number; // group 的排序，数字越大，放越后面
     tag?: string[]; // 这个组件的标签
     description?: string; // 对这个组件的描述
     author?: string; // 作者

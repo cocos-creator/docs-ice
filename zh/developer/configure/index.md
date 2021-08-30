@@ -15,7 +15,7 @@
 ### 其他配置
 
 ```js
-//项目路径，可以是绝对路径，也可以是相对于 Resources 的路径
+// 项目路径，可以是绝对路径，也可以是相对于 Resources 的路径
 "project-path": "../../abc_project",
 
 // 素材库 panel 相关设置

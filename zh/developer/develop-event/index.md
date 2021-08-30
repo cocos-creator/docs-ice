@@ -98,8 +98,8 @@ export default class VideoPlayAction extends Action {
 ```
 
 使用 `@eduAction` 装饰器即可定义一个动作，具体的参数如下：
-- name: UI面板上，展示的动作名字
-- visible: 如果动作不想出现在列表中，需要设置为 `false`，默认为 `true`。
+- `name`：UI 面板上展示的动作名字
+- `visible`：默认为 `true`。如果动作不想出现在列表中，需要将其设置为 `false`。
 
 动作的类型值是由 `@ccclass` 决定。
 

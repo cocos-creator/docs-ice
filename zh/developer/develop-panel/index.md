@@ -1,6 +1,6 @@
 # 自定义面板
 
-## 1、自定义面板的入口声明
+## 自定义面板的入口声明
 
 自定义面板的接入需要依赖于 Cocos Creator 的脚本组件，在 Cocos Creator 的脚本组件中定义指定的入口,以及对应的属性，并且把对应的脚本挂载到需要显示的组件上
 
@@ -39,11 +39,11 @@
 
 > **注意**：`@inspector` 中的地址即自定义面板的入口文件地址，这个地址与实际的 UI 组件的地址是对应的，这样系统才能正常地读取和显示 UI。
 
-## 2、自定义面板的组件编写
+## 自定义面板的组件编写
 
-目前自定义面板支持 Vue 组件的写法，因为是外联组件，不加入 Cocos 本身的编译，所以组件需要采用 `common.js` 写法，并且完成好的组件是 ES5 语法才能正确的接入项目。
+目前自定义面板支持 Vue 组件的写法，因为是外联组件，不加入 Creator 本身的编译，所以组件需要采用 `common.js` 写法，并且完成好的组件是 ES5 语法才能正确地接入项目。
 
-1. js的入口
+1. js 的入口
 
     ```js
     const path = require('path');
@@ -53,7 +53,7 @@
     // 引入 template 模板
     const template = fs.readFileSync(path.join(__dirname, './template.html'), 'utf-8');
 
-    // 引入样式文件，目前整个自定义面板的 UI 是写在一个 css 文件中
+    // 引入样式文件，目前整个自定义面板的 UI 是写在一个 CSS 文件中
     exports.style = fs.readFileSync(path.join(__dirname, './style.css'), 'utf-8');
 
     // 引入自定义组年
@@ -80,11 +80,11 @@
     };
     ```
 
-    - 因为没有办法参数编辑，所以模块的导出需要暴露两个文件，一个是读取后的 style 文本，在 Cocos 内部会把指定的 style 文本添加到样式中，一个是 Vue 组件。
+    - 因为没有办法参数编辑，所以模块的导出需要暴露两个文件：一个是读取后的 style 文本，在 Creator 内部会把指定的 style 文本添加到样式中；另一个是 Vue 组件。
 
-    > **注意**：这里的 exports 出来的组件名称需要与入口声明的 @inspector 中的类名一致，不然内部无法正确注册 Vue 组件。
+    > **注意**：这里的 `exports` 导出的组件名称需要与入口声明的 `@inspector` 中的类名一致，不然内部无法正确注册 Vue 组件。
 
-    - **在入口处组件接收两个参数，target 与 root 是面板回传的自定义属性，可以根据这些自定义属性定制自己的 ui**。
+    - **在入口处组件接收两个参数，`target` 与 `root` 是面板回传的自定义属性，可以根据这些自定义属性定制自己的 UI**。
 
 2. template 文件的编写
 
@@ -99,11 +99,11 @@
     </div>
     ```
 
-    > template 的编写对应 Vue 里的 template 的写法
+    > **注意**：template 的编写对应 Vue 里的 template 的写法
 
-3. css 样式的编写
+3. CSS 样式的编写
 
-    目前样式的写法只支持 css 的写法，并且当前所有的父组件以及子组件的样式都统一归类写在这里。
+    目前样式的写法只支持 CSS 的写法，并且当前所有的父组件以及子组件的样式都统一归类写在这里。
 
 ## 自定义登录界面
 
@@ -113,7 +113,7 @@
 
 ```
 class LoginFrame extends window.HTMLElement {
-   static name = 'edu-login-frame'; // <--- 必须有，name 可以顺意取
+   static name = 'edu-login-frame'; // <--- 必须有，name 可以随意取
    //... 内容写法跟 html 一样
 }
 // 必须要注册到 customElements 上

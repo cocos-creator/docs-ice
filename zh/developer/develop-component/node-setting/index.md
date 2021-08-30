@@ -6,7 +6,7 @@
 
 ## 原理
 
-如果节点添加了`EduDisplayComponent`脚本，那么节点树就会显示该节点。
+如果节点添加了 `EduDisplayComponent` 脚本，那么节点树就会显示该节点。
 
 ```js
 @ccclass('EduTreeInfo')

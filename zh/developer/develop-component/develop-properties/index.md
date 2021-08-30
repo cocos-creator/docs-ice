@@ -74,7 +74,7 @@ export default class EduElement extends EduElementAbstract {
 
 你的选择取决于你喜欢哪种。
 
-> 关于折叠组件的 head(`EduImage`) 自定义，需要进一步完善。
+> 关于折叠组件的 `head`（`EduImage`）自定义，需要进一步完善。
 
 ## `@eduProperty` 参考字段
  

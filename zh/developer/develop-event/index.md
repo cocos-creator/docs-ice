@@ -49,14 +49,9 @@ eventLibrary.registerEvent({
 
 使用 `eventLibrary.registerEvent` 接口，即可注册一个事件，具体的参数说明如下：
 
-- name：
-在UI面板上，展示的事件名字，如果名字中带有分隔符 `/`，会自动解析为级联菜单
-
-![级联菜单](img/event_menu.png)
-
 - `name`：在 UI 面板上展示的事件名字，如果名字中带有分隔符 `/`，会自动解析为级联菜单。
 
-  ![级联菜单](img/event_menu.png)
+    ![级联菜单](img/event_menu.png)
 
 - `type`：当事件触发时，对外抛出的事件名。
 
@@ -106,7 +101,7 @@ export default class VideoPlayAction extends Action {
 
 动作的类型值是由 `@ccclass` 决定。
 
-### 关于run
+### 关于 run
 
 每个动作被触发时，都会调用 `run`，而参数 `node`，跟事件的 `target` 有关系。
 
@@ -120,15 +115,15 @@ export default class VideoPlayAction extends Action {
 
     ![页面跳转](img/event_page.png)
 
-    `page` 目前应用在页面跳转的跳转页面参数上，`enumListType='page'` 时，该属性会自动变为带可选值的下拉框类型，供用户选择。
+    `page` 目前应用在页面跳转的跳转页面参数上，`enumListType = 'page'` 时，该属性会自动变为带可选值的下拉框类型，供用户选择。
 
     可选值来自当前课程的所有页面。
 
 - video
 
-    `video` 目前应用在播放视频动作的播放目标，`enumListType='video'` 时，该属性会自动变为带可选值的下拉框类型，供用户选择。
+    `video` 目前应用在播放视频动作的播放目标，`enumListType = 'video'` 时，该属性会自动变为带可选值的下拉框类型，供用户选择。
 
-    可选值来自当前page的所有视频。
+    可选值来自当前 page 的所有视频。
 
 ## 自定义动效
 
@@ -189,7 +184,7 @@ class FadeIn extends AniEffect {
 
 和定义属性一样，通过 `@property`、`@eduProperty` 即可定义动效的属性参数。
 
-当选择该动效时，动效的参数就会在UI面板上显示出来。
+当选择该动效时，动效的参数就会在 UI 面板上显示出来。
 
 #### run
 

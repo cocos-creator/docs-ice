@@ -6,8 +6,8 @@
 
     ```
     'client-mode': {
-    // 是否启用教师端可见功能
-    enable: false,
+        // 是否启用教师端可见功能
+        enable: false,
     }
     ```
 

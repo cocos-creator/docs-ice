@@ -56,7 +56,7 @@ Mac 版 Cocos ICE 的安装程序是一个 `.zip` 压缩包，通常命名会是
 - editor 编辑器配置信息：打开 `编辑器/builtin/edu-editor/.EduEditor/settings/edu-settings.json`，配置编辑器信息。
 - project 项目配置信息：打开 `项目/settings/edu-settings.json` 配置项目设置。
 
-详细配置说明见 [**配置信息**](../../developer/configure/index.md) 。
+详细配置说明见 [**配置信息**](../../developer/configure/index.md)。
 
 #### 3. 二次打包分发
 

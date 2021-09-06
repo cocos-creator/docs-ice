@@ -90,7 +90,7 @@
 
     ```html
     <div class="container">
-        <div class="listItem" v-for="(val, ind) of (target.value||[])" :key="'comp_'+ind">
+        <div class="listItem" v-for="(val, ind) of (target.value||[])" :key="'comp_' + ind">
             <component  :info="val" :is="getCompType(val.type)" :root="root"/>
         </div>
 

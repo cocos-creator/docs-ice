@@ -184,7 +184,7 @@ export enum ToolbarRole {
     const buttons = document.querySelectorAll('[data-ice-toolbar-id=custom1]');
     ```
 
-- 用户配置出现的按钮，在元素对应的 `click`、 `mouseenter`、`mouseleave` 事件触发时，会发出指定的 IPC 事件广播。
+- 用户配置出现的按钮，在元素对应的 `click`、`mouseenter`、`mouseleave` 事件触发时，会发出指定的 IPC 事件广播。
 
     事件名称与用户定义的 `id` 相关，对应逻辑为 `toolbar-${id}-${eventName}`
 

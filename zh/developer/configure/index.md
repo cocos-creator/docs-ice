@@ -10,7 +10,8 @@
 
 - [服务端配置](server/index.md)
 - [分辨率配置](resolution/index.md)
-- [属性分组配置](properties-groups/index.md)
+- [工具栏配置](toolbar/index.md)
+- [属性配置](properties/index.md)
 
 ### 其他配置
 

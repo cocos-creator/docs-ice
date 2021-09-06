@@ -18,7 +18,7 @@ export interface ToolbarItemRole {
     // 用于覆盖内置的默认图标
     // 支持类型：
     // 1. 内置 iconfont 图标
-    // 2. 图片 URL (png,jpg,jpeg,gif,webp,svg)
+    // 2. 图片 URL (png、jpg、jpeg、gif、webp、svg)
     // 3. base64 字符串
     icon?: string;
 }
@@ -29,7 +29,7 @@ export interface ToolbarItemRole {
 ```ts
 // 用户自定义按钮的配置
 export interface ToolbarItemCustomized {
-    // 用于标识按钮的 id。影响绑定的事件名称、元素的标签
+    // 用于标识按钮的 ID。影响绑定的事件名称、元素的标签
     id: string;
 
     // 展示的文本
@@ -172,31 +172,31 @@ export enum ToolbarRole {
 
 对于以上这样一个按钮配置，ICE 提供以下接口供外部对接使用。
 
-- 用户配置的 `id` ，将以 `data attribute` 的形式附加到目标按钮元素上
+- 用户配置的 `id`，将以 `data attribute` 的形式附加到目标按钮元素上
 
-```html
-<!-- 元素示例 -->
-<button data-ice-toolbar-id="custom1">...</button>
-```
+    ```html
+    <!-- 元素示例 -->
+    <button data-ice-toolbar-id="custom1">...</button>
+    ```
 
-```js
-// 通过 `querySelector` 获取定制的按钮元素
-const buttons = document.querySelectorAll('[data-ice-toolbar-id=custom1]');
-```
+    ```js
+    // 通过 `querySelector` 获取定制的按钮元素
+    const buttons = document.querySelectorAll('[data-ice-toolbar-id=custom1]');
+    ```
 
-- 用户配置出现的按钮，在元素对应的 `click`, `mouseenter`, `mouseleave` 事件触发时，会发出指定的 IPC 事件广播。
+- 用户配置出现的按钮，在元素对应的 `click`、 `mouseenter`、`mouseleave` 事件触发时，会发出指定的 IPC 事件广播。
 
     事件名称与用户定义的 `id` 相关，对应逻辑为 `toolbar-${id}-${eventName}`
 
-```text
-<!-- id为 custom1 时的事件名称示例 -->
+    ```text
+    <!-- id 为 custom1 时的事件名称示例 -->
 
-click: 'toolbar-custom1-click',
+    click: 'toolbar-custom1-click',
 
-mouseenter: 'toolbar-custom1-mouseenter',
+    mouseenter: 'toolbar-custom1-mouseenter',
 
-mouseleave: 'toolbar-custom1-mouseleave',
-```
+    mouseleave: 'toolbar-custom1-mouseleave',
+    ```
 
 ## 超出折叠
 

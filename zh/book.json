@@ -21,12 +21,12 @@
                 "name": "1.0",
                 "links": [
                     {
-                        "name": "1.0",
-                        "link": "https://docs.cocos.com/ice/1.0/manual/zh"
-                    },
-                    {
                         "name": "1.1",
                         "link": "https://docs.cocos.com/ice/1.1/manual/zh"
+                    },
+                    {
+                        "name": "1.0",
+                        "link": "https://docs.cocos.com/ice/1.0/manual/zh"
                     }
                 ]
             }

@@ -32,6 +32,12 @@ internal: {
     'use-edu-external-component': true, // 是否加载编辑器内置的一些互动组件
 },
 
+// 配置一些组件的默认属性
+components:{
+    "EduMovie":{
+        "background-color":"#ffffff", // 视频组件的背景色
+    }
+}
 // 预览相关
     // 预览的虚拟设备
     preview: { 

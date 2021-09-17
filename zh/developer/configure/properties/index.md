@@ -64,3 +64,37 @@ export default class EduImage extends EduElementAbstract{
     ```json
     "presetColors": ["#000000", "#ffffff"]
     ```
+  
+## 视频组件背景色配置
+
+- **配置类型**：`editor` 编辑器配置信息。
+
+- **JSON配置示例**
+  ```json
+  components:{
+    "EduMovie":{
+        "background-color":"#ffffff"
+    }
+  }
+  ```
+
+## 互动组件结束互动时的默认动作配置
+
+![](../../../img/interactive-finish-action.png)
+
+示例代码：
+```ts
+import { Action }, interactiveFinishAction  from 'InteractiveFinishAction'
+interactiveFinishAction.register(
+    new Action(
+        '测试选项', // 选项的名字
+        'test-key', // 选项的唯一标识名，不允许重复，否则会提示注册失败
+        ()=>{
+            // 选项的具体执行逻辑
+            console.log('i am test ...')
+        }
+    )
+)
+
+```
+如上所示，就能在该下拉选项中增加一个**测试选项**，当用户配置了这个**测试选项**后，互动组件在结束互动时，就会执行对应的选项回调。

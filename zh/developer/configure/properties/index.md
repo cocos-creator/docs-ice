@@ -82,7 +82,7 @@ export default class EduImage extends EduElementAbstract{
 
 - **配置类型**: `editor` 编辑器配置信息。
 
-- **JSON配置示例**
+- **JSON 配置示例**
   ```json
   pageTransition: "PagePushIn"
   ```

@@ -77,6 +77,16 @@ export default class EduImage extends EduElementAbstract{
     }
   }
   ```
+  
+## 页面默认切换动效
+
+- **配置类型**: `editor` 编辑器配置信息。
+
+- **JSON 配置示例**
+  ```json
+  pageTransition: "PagePushIn"
+  ```
+  如果配置的数据是无效的，运行时可能无法生效。
 
 ## 互动组件结束互动时的默认动作配置
 

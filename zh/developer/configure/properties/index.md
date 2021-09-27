@@ -21,7 +21,7 @@ components: {
 | name       | 定义组件在教育编辑器属性面板的分组名 | 类名 |
 | collapsible|组件是否在教育编辑器属性面板显示分组标题名|true|
 
-#### 示例：
+#### 示例
 
 ```js
 import {eduClass} from "education"
@@ -30,6 +30,20 @@ import {eduClass} from "education"
 export default class EduImage extends EduElementAbstract{
 }
 ```
+
+## 页面属性配置
+
+### 默认过渡动画配置
+
+- **配置类型**: `editor` 编辑器配置信息。
+
+- **JSON 配置示例**
+
+  ```json
+  pageTransition: "PagePushIn"
+  ```
+
+  >**注意**：如果配置的数据是无效的，运行时可能无法生效。
 
 ## 文字属性配置
 
@@ -49,6 +63,22 @@ export default class EduImage extends EduElementAbstract{
     "fontSizes": [12, 24, 32, 48]
     ```
 
+## 视频属性配置
+
+### 播放器背景色配置
+
+- **配置类型**：`editor` 编辑器配置信息。
+
+- **JSON配置示例**
+
+  ```json
+  components:{
+    "EduMovie":{
+        "background-color":"#ffffff"
+    }
+  }
+  ```
+
 ## 颜色预设配置
 
 - **配置类型**：`editor` 编辑器配置信息。
@@ -64,47 +94,3 @@ export default class EduImage extends EduElementAbstract{
     ```json
     "presetColors": ["#000000", "#ffffff"]
     ```
-  
-## 视频组件背景色配置
-
-- **配置类型**：`editor` 编辑器配置信息。
-
-- **JSON配置示例**
-  ```json
-  components:{
-    "EduMovie":{
-        "background-color":"#ffffff"
-    }
-  }
-  ```
-  
-## 页面默认切换动效
-
-- **配置类型**: `editor` 编辑器配置信息。
-
-- **JSON 配置示例**
-  ```json
-  pageTransition: "PagePushIn"
-  ```
-  如果配置的数据是无效的，运行时可能无法生效。
-
-## 互动组件结束互动时的默认动作配置
-
-![](../../../img/interactive-finish-action.png)
-
-示例代码：
-```ts
-import { Action }, interactiveFinishAction  from 'InteractiveFinishAction'
-interactiveFinishAction.register(
-    new Action(
-        '测试选项', // 选项的名字
-        'test-key', // 选项的唯一标识名，不允许重复，否则会提示注册失败
-        ()=>{
-            // 选项的具体执行逻辑
-            console.log('i am test ...')
-        }
-    )
-)
-
-```
-如上所示，就能在该下拉选项中增加一个 **测试选项**，当用户配置了这个 **测试选项** 后，互动组件在结束互动时，就会执行对应的选项回调。

@@ -5,8 +5,8 @@
 配置该项可以控制新建课程后是否默认生成一页空白页。
 
 ```js
-'edu-blank-page': false, // 课程模式
-'story-blank-page': false, // 互动模式
+'edu-blank-page': false, // 课程制作模式
+'story-blank-page': false, // 互动视频制作模式
 ```
 
 | 属性 | 说明 | 默认值|

@@ -41,6 +41,7 @@
     - [工具栏配置](developer/configure/toolbar/index.md)
     - [属性配置](developer/configure/properties/index.md)
     - [多端控制配置](developer/configure/multi-terminal/index.md)
+    - [页面配置](developer/configure/page/index.md)
 - [自定义组件](developer/develop-component/index.md)
     - [自定义属性](developer/develop-component/develop-properties/index.md)
     - [节点设置](developer/develop-component/node-setting/index.md)

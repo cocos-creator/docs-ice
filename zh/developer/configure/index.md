@@ -13,6 +13,7 @@
 - [工具栏配置](toolbar/index.md)
 - [属性配置](properties/index.md)
 - [多端控制配置](multi-terminal/index.md)
+- [新建课程空白页配置](blank-page/index.md)
 
 ### 其他配置
 

@@ -71,7 +71,7 @@ export interface ICustomComponent {
 
 ## 自定义组件服务端布署
 
-自定义组件放在服务端 'assets/components' 路径下， 需要把对应的组件包打成 zip 压缩文件，并且把 desc.json 文件与 组件封面文件复制到对应的文件夹下，示例结构如下
+在服务端 `assets/components` 路径新建一个文件夹，把自定义组件包打成的 `.zip` 压缩文件，对应的 `desc.json` 文件、组件封面文件复制到该文件夹下，然后重启服务器，即可完成自定义组件的服务端部署。示例结构如下：
 
 ```
 components

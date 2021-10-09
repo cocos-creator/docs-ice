@@ -11,7 +11,7 @@
  * 组件的类型
  */
 export enum ComponentsType {
-    middleware = 'middleware', // 中间件
+    middleware = 'middleware', // 中间件（即插件），不在列表中展示
     component = 'component', // 组件
     page = 'page', // 页面模板
     game = 'game', // 游戏模板
@@ -38,16 +38,26 @@ export interface ICustomComponent {
     prefab: string; // Prefab 的 DB 的路径或者相对路径
     icon: string; // 显示的图片路径
     type: ComponentsType; // 类型
-    typeOrder?: number; // type的排序，数字越大放越后面
     tab: TabType | string; // 页签（分组）
+    sort: number; // 自身排序,数字越大，放越后面
+    dependModules: {[key: string]: string} //组件的依赖模块
+    typeOrder?: number; // type的排序，数字越大放越后面
     tabOrder?: number; // tab 的排序，数字越大，放越后面
     group?: string; // 子分组
     groupOrder?: number; // group的排序，数字越大，放越后面
     tag?: string[]; // 这个组件的标签
     description?: string; // 对这个组件的描述
     author?: string; // 作者
-    sort: number; // 自身排序,数字越大，放越后面
     [key: string]: any; // 其他自定义格式
+}
+```
+
+> dependModules 主要描述的是该组件对外依赖的组件，引用的组件须是 ICE 通用组件格式，即具备 desc.json 描述文件, key 对应的是组件的 desc.json 的 ComponentID, value 对应的是 ( name )^( version ), 如下案例
+
+```
+{
+    "f6d95e66-f48c-4f2e-aafa-269e1dc65443": "alert^0.0.1",
+    "6a15c155-1426-4390-91c3-d1af0e05c6b1": "填空题-乌鸦喝水^0.0.1"
 }
 ```
 
@@ -59,7 +69,20 @@ export interface ICustomComponent {
 'depend-local-resource': true, // 默认是 `false`
 ```
 
-## 上传自定义组件到服务器
+## 自定义组件服务端布署
+
+自定义组件放在服务端 'assets/components' 路径下， 需要把对应的组件包打成 zip 压缩文件，并且把 desc.json 文件与 组件封面文件复制到对应的文件夹下，示例结构如下
+
+```
+components
+ └── 3DModel
+     ├── 3DModel.zip
+     ├── desc.json
+     └── effectPic.jpg // 与 desc.json 中的 icon 名一致
+
+```
+
+## 上传自定义组件到服务器 (上传面板或命令，在 1.4 版本对外开放)
 
 用户完成本地的组件编写后，需要上传到服务器，调用 ICE 的上传面板，上传组件到服务器， 并且在组件的 UI 和页面模板的 UI 进行数据请求和展示
 

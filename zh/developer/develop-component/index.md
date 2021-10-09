@@ -41,7 +41,7 @@ export interface ICustomComponent {
     tab: TabType | string; // 页签（分组）
     sort: number; // 自身排序,数字越大，放越后面
     dependModules: {[key: string]: string} // 组件的依赖模块
-    typeOrder?: number; // type的排序，数字越大放越后面
+    typeOrder?: number; // type 的排序，数字越大放越后面
     tabOrder?: number; // tab 的排序，数字越大，放越后面
     group?: string; // 子分组
     groupOrder?: number; // group的排序，数字越大，放越后面

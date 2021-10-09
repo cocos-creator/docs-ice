@@ -56,7 +56,7 @@ export interface ICustomComponent {
 默认 ICE 中读取的是所配置的服务端上的组件，如果需要更改读取本地配置需要添加配置
 
 ```
-'depend-local-resource': true, //默认是false
+'depend-local-resource': true, // 默认是 `false`
 ```
 
 ## 上传自定义组件到服务器

@@ -44,7 +44,7 @@ export interface ICustomComponent {
     typeOrder?: number; // type 的排序，数字越大放越后面
     tabOrder?: number; // tab 的排序，数字越大，放越后面
     group?: string; // 子分组
-    groupOrder?: number; // group的排序，数字越大，放越后面
+    groupOrder?: number; // group 的排序，数字越大，放越后面
     tag?: string[]; // 这个组件的标签
     description?: string; // 对这个组件的描述
     author?: string; // 作者

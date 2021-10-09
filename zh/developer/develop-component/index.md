@@ -52,7 +52,7 @@ export interface ICustomComponent {
 }
 ```
 
-> dependModules 主要描述的是该组件对外依赖的组件，引用的组件须是 ICE 通用组件格式，即具备 desc.json 描述文件, key 对应的是组件的 desc.json 的 ComponentID, value 对应的是 ( name )^( version ), 如下案例
+其中 `dependModules: {[key: string]: string}` 的 `dependModules` 主要描述的是该组件对外依赖的组件，引用的组件须是 ICE 通用组件格式，即具备 `desc.json` 描述文件，`key` 对应的是组件的 `desc.json` 的 `ComponentID`，`value` 对应的是 `(name)^(version)`。案例如下：
 
 ```
 {

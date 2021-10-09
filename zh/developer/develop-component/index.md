@@ -34,7 +34,7 @@ export enum TabType {
 export interface ICustomComponent {
     componentID: string; // 组件的 ID 标识，以 Prefab 对应的 UUID 为 ID
     name: string; // 组件展示的名称
-    version: string; // 组件的版本(格式: '0.0.0')
+    version: string; // 组件的版本（格式: '0.0.0'）
     prefab: string; // prefab的db的路径或者相对路径
     icon: string; // 显示的图片路径
     type: ComponentsType; // 类型

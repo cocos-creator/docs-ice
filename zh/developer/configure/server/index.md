@@ -50,7 +50,7 @@ class Config implements IConfig {
 
 ## 服务端的启动配置和启动
 
-服务端的启动配置文件 package.json
+服务端的启动配置文件 `package.json`
 
 ```js
 "scripts": {

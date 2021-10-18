@@ -1,6 +1,6 @@
 # 客户端接入服务端配置
 
-配置地址参见 [配置信息](developer/configure/index.md) 中的 editor
+ICE 的课程广场, 素材库等所在的服务端支持部署在公司自己的服务器, 部署好的服务器可以在配置文件中配置相应信息 配置地址参见 [配置信息](../index.md) 中的 `editor` 编辑器配置信息，配置示例如下:
 
 ```js
 "assets-server": {
@@ -10,7 +10,9 @@
 }
 ```
 
-# 服务端的环境要求
+# 服务端部署
+
+## 服务端的环境要求
 
 - `nodejs` ，版本 10 +
 - 包管理工具 `npm` 或者 `yarn`
@@ -24,17 +26,17 @@
     yarn global add typescript@4.4.2
 ```
 
-# 服务端的依赖安装
+## 服务端的依赖安装
 
 执行 npm install 或者 yarn install 进行依赖模块安装
 
-# 服务端的脚本编译
+## 服务端的脚本编译
 
 在服务端根目录执行 tsc 命令
 
-# 服务端配置
+## 服务端配置
 
-把服务端代码下载布署到服务器，更改服务端配置, 服务端的配置文件的路径 source/config.ts
+把服务端代码下载部署到服务器，更改服务端配置, 服务端的配置文件的路径 source/config.ts
 
 ```js
 class Config implements IConfig {
@@ -46,16 +48,7 @@ class Config implements IConfig {
 服务端的静态资源存储目录 assets <br/>
 服务端的临时存储目录 temp
 
-# 服务端的启动配置和启动
-
-服务端的启动配置文件 package.json
-
-```js
-"scripts": {
-    "start": "node index",
-    ...
-}
-```
+## 服务端的启动配置
 
 在根目录下输入启动服务端命令如下:
 

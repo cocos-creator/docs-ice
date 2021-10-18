@@ -12,9 +12,9 @@
 
 # 服务端的环境要求
 
-- nodejs ，版本 10 +
-- 包管理工具 npm 或者 yarn
-- typescript 4.2.0 + 建议全局安装
+- `nodejs` ，版本 10 +
+- 包管理工具 `npm` 或者 `yarn`
+- `typescript` 4.2.0 + 建议全局安装
 
 ```js
     //npm

@@ -1,6 +1,6 @@
 # 客户端接入服务端配置
 
-配置地址参见 [配置信息](developer/configure/index.md) 中的 editor
+配置地址参见 [配置信息](../index.md) 中的 `editor` 编辑器配置信息。配置代码示例如下：
 
 ```js
 "assets-server": {

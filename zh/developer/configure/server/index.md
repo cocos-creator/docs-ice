@@ -14,15 +14,15 @@ ICE 的课程广场、素材库等所在的服务端支持部署在公司自己�
 
 ## 服务端的环境配置
 
-- PC 端全局安装 [nodejs-10.0.0](https://nodejs.org/zh-cn/download/) 或以上版本
+- 安装 [Node.js](https://nodejs.org/zh-cn/download/) 10.0 或以上版本
 - 包管理工具 `npm` 或者 `yarn`
-- PC 端全局安装 TypeScript 4.2.0 或以上版本
+- 全局安装 TypeScript 4.2.0 或以上版本
 
-```js
-    //npm
+```bash
+    # npm
     npm i -g typescript@4.2.0
 
-    //yarn
+    # yarn
     yarn global add typescript@4.2.0
 ```
 

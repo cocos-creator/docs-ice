@@ -66,4 +66,4 @@ npm start    // 使用 npm 启动
 yarn start   // 使用 yarn 启动
 ```
 
-提示：由于直接使用 npm start 或者 yarn start 在退出服务端的链接后，会被关闭，所以我们推荐使用 pm2 等进程管理工具，对服务器进行管理和 log 的写入。
+>**提示**：由于直接使用 `npm start` 或者 `yarn start` 在退出服务端的连接后，会被关闭，所以我们推荐使用 pm2 等进程管理工具，对服务器进行管理和 log 的写入。

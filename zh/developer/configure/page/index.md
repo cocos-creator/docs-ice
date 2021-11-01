@@ -21,7 +21,7 @@
 - **JSON 配置示例**
 
   ```json
-  pageTransition: "PagePushIn"
+  "pageTransition": "PagePushIn"
   ```
 
   >**注意**：如果配置的数据是无效的，运行时可能无法生效。

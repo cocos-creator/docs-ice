@@ -9,8 +9,8 @@
 - **JSON配置示例**
 
   ```json
-  components:{
-    "EduMovie":{
+  "components": {
+    "EduMovie": {
         "background-color":"#ffffff"
     }
   }

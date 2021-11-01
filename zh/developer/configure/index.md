@@ -11,9 +11,10 @@
 - [服务端配置](server/index.md)
 - [分辨率配置](resolution/index.md)
 - [工具栏配置](toolbar/index.md)
-- [属性配置](properties/index.md)
-- [多端控制配置](multi-terminal/index.md)
 - [页面配置](page/index.md)
+- [属性配置](properties/index.md)
+- [互动视频配置](video/index.md)
+- [多端控制配置](multi-terminal/index.md)
 
 ### 其他配置
 

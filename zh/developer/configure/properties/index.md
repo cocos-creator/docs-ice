@@ -31,20 +31,6 @@ export default class EduImage extends EduElementAbstract{
 }
 ```
 
-## 页面属性配置
-
-### 默认过渡动画配置
-
-- **配置类型**: `editor` 编辑器配置信息。
-
-- **JSON 配置示例**
-
-  ```json
-  pageTransition: "PagePushIn"
-  ```
-
-  >**注意**：如果配置的数据是无效的，运行时可能无法生效。
-
 ## 文字属性配置
 
 ### 字号配置
@@ -62,22 +48,6 @@ export default class EduImage extends EduElementAbstract{
     ```json
     "fontSizes": [12, 24, 32, 48]
     ```
-
-## 视频属性配置
-
-### 播放器背景色配置
-
-- **配置类型**：`editor` 编辑器配置信息。
-
-- **JSON配置示例**
-
-  ```json
-  components:{
-    "EduMovie":{
-        "background-color":"#ffffff"
-    }
-  }
-  ```
 
 ## 颜色预设配置
 

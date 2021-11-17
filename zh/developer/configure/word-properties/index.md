@@ -12,7 +12,7 @@ fontSizes: [
 
 ```js
 fontFamilies: [
-  'Arial',
   { label: '楷体', value: 'kaiti' }
 ]
 ```
+> 插入字体时，会自动使用第一项配置作为默认字体，若没有配置，默认使用Arial

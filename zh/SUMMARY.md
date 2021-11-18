@@ -51,4 +51,5 @@
 - [强制刷新页面缩略图](developer/refresh-page/index.md)
 - [自定义面板](developer/develop-panel/index.md)
 - [构建发布](developer/build/index.md)
+    - [项目发布](developer/build/deployment/index.md)
 - [Cocos Creator 项目迁移](developer/project-migrate/index.md)

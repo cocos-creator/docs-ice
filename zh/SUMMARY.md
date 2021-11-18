@@ -51,3 +51,5 @@
 - [强制刷新页面缩略图](developer/refresh-page/index.md)
 - [自定义面板](developer/develop-panel/index.md)
 - [构建发布](developer/build/index.md)
+- [第三方平台适配](developer/third-platform/index.md)
+    - [拓课云适配](developer/third-platform/talk-cloud/index.md)

@@ -1,7 +1,7 @@
-# 项目迁移
+# Cocos Creator 项目迁移
 
 Cocos ICE 基于 Cocos Creator 扩展而来，二者项目结构相似，因此用 Cocos Creator 开发的游戏在经过简单适配后可以迁移进 Cocos ICE 中作为独立组件使用。
-- [项目迁移](#项目迁移)
+- [Cocos Creator 项目迁移](#cocos-creator-项目迁移)
   - [项目目录介绍](#项目目录介绍)
       - [Windows平台](#windows平台)
       - [Mac平台](#mac平台)
@@ -47,9 +47,10 @@ Cocos ICE 基于 Cocos Creator 扩展而来，二者项目结构相似，因此�
 
 #### 组件模式
 
-组件库分为本地组件和云端组件两种模式，本地组件即所有组件存在本地组件目录中，云端组件下载下来的组件存放于云端组件目录中，目录地址参考 [项目目录介绍](#项目目录介绍) 。
+组件库分为本地组件和云端组件两种模式，本地组件即所有组件存在本地组件目录中，云端组件下载下来的组件存放于云端组件目录中，目录地址参考 [项目目录介绍](#项目目录介绍)。
 
 组件模式切换只需要找到配置脚本 `edu-editor\source\edu\settings\default.ts`，修改 `depend-local-resource` 属性，设置为 **true** 则扫描本地资源，反之请求服务器资源
+
 ```js
     // 设置 settings 的一些默认值
     export const editor = {
@@ -96,7 +97,7 @@ export interface ICustomComponent {
     tag?: string[]; // 这个组件的标签
     description?: string; // 对这个组件的描述
     author?: string; // 作者
-    sort: number; // 自身排序,数字越大，放越后面
+    sort: number; // 自身排序，数字越大，放越后面
     dependModules?: { [key: string]: string }; // 组件依赖
     [key: string]: any; // 其他自定义格式
 }
@@ -119,11 +120,12 @@ export interface ICustomComponent {
 - 编辑器自带 `主摄像机(Main Camera)` ，如若组件内自带其他 `Camera` ，大概率会与主摄像机产生冲突导致画面显示异常，请自行做好调试。
 
 - 组件脱离 `asset` 存在，目录中理论上也无法存在 `resources` 文件夹，所以无法直接使用 `cc.assetManage` 和 `cc.resource` 加载组件内资源，如果有需要，可以将相关文件夹配置为 `Bundle`，使用编辑器内置的 `Bundle` 加载方法加载资源，操作如下：
-  - 配置Bundle，为避免打包之后 `Bundle` 加载异常，组件内的 **Bundle 优先级** 统一设置为 **3**
+  - 配置Bundle，为避免打包之后 `Bundle` 加载异常，组件内的 **Bundle 优先级** 统一设置为 **3**。
 
     <img src='./img/bundle.jpg' alt='配置Bundle' width='500'>
 
   - 修改Bundle加载逻辑，代码示例：
+  - 
     ```js
     import {BundleLoader} from "GameConfig";
     @ccclass
@@ -150,10 +152,9 @@ export interface ICustomComponent {
     }
     ```
 
-
 ## 属性面板配置
 
-如下图所示，组件一般都带有各种各样的配置性选项，如果想要一个属性在属性面板中显示，需要使用 `@eduProperty` 定义属性，详细请查看  [自定义属性](../develop-component/develop-properties/index.md) 
+如下图所示，组件一般都带有各种各样的配置性选项，如果想要一个属性在属性面板中显示，需要使用 `@eduProperty` 定义属性，详细请查看  [自定义属性](../develop-component/develop-properties/index.md)。
 
 ![属性面板](./img/eduProperty.jpg)
 
@@ -163,7 +164,7 @@ export interface ICustomComponent {
 
 <img src='./img/frogGameMenu.jpg' alt='frogGame目录' width='200'> <img src='./img/frogGameAsset.jpg' alt='frogGame Asset文件夹' width='200'>
 
-> **注意**：请确保您开启了本地组件模式，参考[组件模式](#组件模式) 
+> **注意**：请确保您开启了本地组件模式，参考[组件模式](#组件模式)。
 
 #### 代码搬运
 
@@ -203,22 +204,18 @@ export default class FrogAnswerElement extends EduElementAbstract{}
 
 ###### 增加 EduElement 组件
 
-属性面板默认是空的，没有任何属性配置，如图
+属性面板默认是空的，没有任何属性配置，如图：
 
 <img src='./img/emptyElement.jpg' alt='frog Bundle 配置' width='500'>
 
-如过需要展示相关属性配置，需要手动在组件节点上挂载 `EduElement` 组件，
+如过需要展示相关属性配置，需要手动在组件节点上挂载 `EduElement` 组件，添加方式如下图操作：
 
-<img src='./img/eduElemntPanel.jpg' alt='frog Bundle 配置' width='500'>
+<img src='./img/eduElemntPanel.jpg' alt='frog Bundle 配置' width='600'> <img src='./img/eduElement.jpg' alt='frog Bundle 配置' width='600'>
 
-添加方式如下图操作：
-
-<img src='./img/eduElement.jpg' alt='frog Bundle 配置' width='500'>
-
-其中 `EduElement` 目前主要包括 `角度`、`大小`、`层级`、`位置`、`节点树` 五个配置项，
+其中 `EduElement` 目前主要包括 `角度`、`大小`、`层级`、`位置`、`节点树` 五个配置项。
 
 - 层级调整无法穿透节点、组件，例如；当B组件层级比A组件层级高时，A组件中的子节点永远无法通过调整层级的方式浮于B组件之上。
-- 节点树会显示当前画布上的所有组件，包括子组件，详细参考 [节点树](../develop-component/node-setting/index.md)
+- 节点树会显示当前画布上的所有组件，包括子组件，详细参考 [节点树](../develop-component/node-setting/index.md)。
 
 
 ###### Bundle 加载逻辑调整

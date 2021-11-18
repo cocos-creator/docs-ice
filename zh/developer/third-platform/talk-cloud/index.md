@@ -61,7 +61,7 @@ iframe 通信
 
 ## 示例
 
-下面试拓课云适配代码，代码路径为： `\edu-editor\ui-component\stateSync\EduStateSync.ts`
+下面是拓课云平台适配代码，代码路径为： `.\edu-editor\ui-component\stateSync\EduStateSync.ts`
 
 ```js
 import { GameConfig } from 'GameConfig';

@@ -12,7 +12,7 @@ Cocos ICE 内部实现了一套通用消息收发逻辑，您只需要关心与�
 
 ### 初始化平台实例
 
-入口脚本路径：`\edu-editor\ui-component\stateSync\EduStateSync.ts`，由于所有适配脚本都在 `ui-component` M目录下，不需要编译就能运行。
+入口脚本路径：`.\edu-editor\ui-component\stateSync\EduStateSync.ts`，由于所有适配脚本都在 `ui-component` 目录下，不需要编译就能运行。
 
 以下为 入口脚本 `EduStateSync.ts` 代码：
 
@@ -304,4 +304,4 @@ onTouchStart() {
 
 - 组件消息发送：组件发送消息使用 `eduStateSync.emit(eventName, data);`。
 
-> **注意**：对于 `eduStateSync.emit(eventName, data);` ，为了将组件自身发送的事件与自身消息传递事件区分开来， 收到消息后自身消息传递时 `eventName` 一般使用 `eventName` + `_ret` 的形式，组件向外发送消息时直接使用 `eventName`。同理，接收消息时，组件内只接收 `eventName` + `_ret` 形式的消息，`XXXSyncComp` 中直接收 `eventName` 形式的消息。
+> **注意**：对于 `eduStateSync.emit(eventName, data);` ，为了将组件自身发送的事件与自身消息传递事件区分开来， 收到消息后自身消息传递时 `eventName` 一般使用 `eventName` + `'_ret'` 的形式，组件向外发送消息时直接使用 `eventName`。同理，接收消息时，组件内只接收 `eventName` + `'_ret'` 形式的消息，`XXXSyncComp` 中直接收 `eventName` 形式的消息。

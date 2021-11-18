@@ -24,7 +24,7 @@ iframe 通信
   ```js
   {
       method: "onLoadComplete",
-      coursewareRatio: 16/9 // 课件比例（比例为宽/高，可选，默认为16/9），类型Number
+      coursewareRatio: 16/9 // 课件比例（比例为宽/高，可选，默认为16/9），类型 Number
   }
   ```
 

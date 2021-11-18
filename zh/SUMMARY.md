@@ -54,4 +54,4 @@
 - [构建发布](developer/build/index.md)
 - [第三方平台适配](developer/third-platform/index.md)
   - [拓课云适配](developer/third-platform/talk-cloud/index.md)
-- [项目迁移](developer/project-migrate/index.md)
+- [Cocos Creator 项目迁移](developer/project-migrate/index.md)

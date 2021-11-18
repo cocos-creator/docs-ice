@@ -8,9 +8,13 @@ Cocos ICE 适配第三方平台，便于用户将课件用于不同的第三方�
 
 ## 适配逻辑
 
-Cocos ICE 内部实现了一套通用消息收发逻辑，只需要关心与第三方平台的对接适配，在入口脚本中根据不同的平台引入相应的适配脚本即可。
+Cocos ICE 内部实现了一套通用消息收发逻辑，您只需要关心与第三方平台的对接适配，在入口脚本中根据不同的平台引入相应的适配脚本即可。
 
 ### 初始化平台实例
+
+入口脚本路径：`\edu-editor\ui-component\stateSync\EduStateSync.ts`，由于所有适配脚本都在 `ui-component` M目录下，不需要编译就能运行。
+
+以下为 入口脚本 `EduStateSync.ts` 代码：
 
 ```js
 import { IStateSync, StateSyncEvent } from './IStateSync';
@@ -33,7 +37,6 @@ class EduStateSync extends cc.EventTarget {
     constructor() {
         super();
     }
-
     /**
      * 初始化平台实例
      */
@@ -70,7 +73,7 @@ class EduStateSync extends cc.EventTarget {
      * 把当前的数据同步到服务端
      */
     async syncChanges(comp: IStateSyncComp) {
-        //todo:提交数据更新
+        // 提交数据更新
         let compId = comp.getId();
         if (!compId) {
             return console.warn('component id not found!');
@@ -83,12 +86,12 @@ class EduStateSync extends cc.EventTarget {
         let data = {};
         data[compId] = comp.syncData;
 
-        //更新组件状态数据
+        // 更新组件状态数据
         await this.syncInstance.setAttributes(data);
-        //发送组件更新状态消息
+        // 发送组件更新状态消息
         this.syncInstance.compStateUpdate(compId);
 
-        //本地的，自己去获取下更新
+        // 本地的，自己去获取下更新
         this.onStateUpdate(compId);
     }
 
@@ -103,21 +106,21 @@ export let eduStateSync = new EduStateSync();
 globalThis.eduStateSync = eduStateSync;
 ```
 
-适配脚本引入后需要在 `_initSyncInstance` 方法中创建平台实例。
+> 适配脚本引入后，需要在 `_initSyncInstance` 方法中创建平台实例。
 
 ### 引入适配脚本
 
 平台实例创建之后，按需创建消息同步脚本并继承 `StateSyncComp`，在组件中引用，如果是事件类则需要通过 `node.addComponent()` 的方式动态添加脚本。
 
-![在组件中引用StateSyncComp](img/importStateSyncComp.jpg)
+![在组件中引用StateSyncComp](./talk-cloud/img/importStateSyncComp.jpg)
 
 适配脚本主要用于定义需要监听和发送的消息事件，例如：点击事件、游戏开始事件、游戏结束事件等。
 
 #### 示例
 
-以内置组件`分类题`为例：
+以内置组件 **分类题** 为例：
 
-**SyncComp 中:**
+**SyncComp.ts** 代码如下：
 
 ```js
 const { ccclass, property } = cc._decorator;
@@ -141,13 +144,13 @@ enum CLASSIFY_STEP {
 export default class ClassfySyncComp extends StateSyncComp {
     onLoad() {
         super.onLoad();
-        //初始化当前消息为ready
+        // 初始化当前消息为ready
         this.syncData = {
             step: CLASSIFY_STEP.ready,
             target: '',
         };
         this.curStep = CLASSIFY_STEP.ready;
-        //监听消息列表中的所有消息
+        // 监听消息列表中的所有消息
         eduStateSync.on(CLASSIFY_STEP.classify_item_touch_start, this.onItemTouchStart, this);
         eduStateSync.on(CLASSIFY_STEP.classify_item_touch_move, this.onItemTouchMove, this);
         eduStateSync.on(CLASSIFY_STEP.classify_item_touch_end, this.onItemTouchEnd, this);
@@ -249,7 +252,7 @@ export default class ClassfySyncComp extends StateSyncComp {
         eduStateSync.off(CLASSIFY_STEP.send_classify_agora_data, this.sendClassifyAgoraData, this);
         eduStateSync.off(CLASSIFY_STEP.get_classify_agora_data, this.getClassifyAgoraData, this);
     }
-    //发送消息
+    // 发送消息
     stateUpdate() {
         this.curStep = this.syncData.step;
         eduStateSync.emit(this.syncData.step + '_ret', this.syncData);
@@ -258,7 +261,7 @@ export default class ClassfySyncComp extends StateSyncComp {
 
 ```
 
-**组件中：**
+**分类题组件中调用示例**：
 
 ```js
 onLoad() {
@@ -301,4 +304,4 @@ onTouchStart() {
 
 - 组件消息发送：组件发送消息使用 `eduStateSync.emit(eventName, data);`。
 
-> **注意：** 对于 `eduStateSync.emit(eventName, data);` ，为了将组件自身发送的事件与自身消息传递事件区分开来， 收到消息后自身消息传递时 `eventName` 一般使用 `eventName` + `_ret` 的形式，组件向外发送消息时直接使用 `eventName`。同理，接收消息时，组件内只接收 `eventName` + `_ret` 形式的消息，`XXXSyncComp` 中直接收 `eventName` 形式的消息。
+> **注意**：对于 `eduStateSync.emit(eventName, data);` ，为了将组件自身发送的事件与自身消息传递事件区分开来， 收到消息后自身消息传递时 `eventName` 一般使用 `eventName` + `_ret` 的形式，组件向外发送消息时直接使用 `eventName`。同理，接收消息时，组件内只接收 `eventName` + `_ret` 形式的消息，`XXXSyncComp` 中直接收 `eventName` 形式的消息。

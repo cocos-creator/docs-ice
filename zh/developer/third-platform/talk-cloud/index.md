@@ -6,18 +6,18 @@ iframe 通信
 
 ## 限制
 
-1. H5 课件只支持单页面 spa，一个课件中只能有一个 html 文件；
-2. H5 课件只能通过 zip 包的形式上传。
+1. H5 课件只支持单页面 `SPA`，一个课件中只能有一个 `HTML` 文件；
+2. H5 课件只能通过 `zip` 包的形式上传。
 
 ## 交互逻辑
 
-![拓课云官方开发文档](../img/talkCloud.jpg)
+![拓课云官方开发文档](./img/talkCloud.jpg)
 
 ## 接口说明
 
-拓课云提供一些公共事件，如果要自定义事件需要和拓课云对接，需要他们的支持。本次适配中，直接使用onFileMessage接管所有自定义消息。
+拓课云提供一些公共事件，如果要自定义事件需要和拓课云对接，需要他们的支持。本次适配中，直接使用 `onFileMessage` 接管所有自定义消息。
 
-- 加载完毕事件： `onLoadComplete` (h5 派发给教室);
+- 加载完毕事件： `onLoadComplete` (H5 派发给教室);
 
   - **参数**
 
@@ -28,7 +28,7 @@ iframe 通信
   }
   ```
 
-- 页面总页数： `onPageNum` (h5 派发给教室);
+- 页面总页数： `onPageNum` (H5 派发给教室);
 
   - **参数**
 
@@ -39,7 +39,7 @@ iframe 通信
   }
   ```
 
-- 跳转页面： `onJumpPage` (h5 派发给教室);
+- 跳转页面： `onJumpPage` (H5 派发给教室);
 
   - **参数**
 
@@ -60,6 +60,8 @@ iframe 通信
   ```
 
 ## 示例
+
+下面试拓课云适配代码，代码路径为： `\edu-editor\ui-component\stateSync\EduStateSync.ts`
 
 ```js
 import { GameConfig } from 'GameConfig';
@@ -82,35 +84,35 @@ export enum IframeEvents {
     GetAttributes = 'GetAttributes',
     InitPage = 'InitPage',
     PageTo = 'onJumpPage',
-    //房间状态变更
+    // 房间状态变更
     RoomStateChanged = 'room-pubmsg',
     // 加载完成
     onLoadComplete = 'onLoadComplete',
-    //设置页数
+    // 设置页数
     SetPage = 'onPagenum',
-    //自定义事件
+    // 自定义事件
     onFileMessage = 'onFileMessage',
-    //用户列表变更事件
+    // 用户列表变更事件
     onUserChange = 'onUserChange',
-    //获取当前页面
+    // 获取当前页面
     RequestCurrentPage = 'RequestCurrentPage',
-    //得到  ”获取当前页面“   回调
+    // 得到  “获取当前页面”   回调
     ReciveCurrentPage = 'ReciveCurrentPage',
-    //教室状态变化
+    // 教室状态变化
     onClassStateChange = 'onClassStateChange',
 }
 /**
  * 白板目前会用到的
  */
 enum TalkUserType {
-    //切换页面
+    // 切换页面
     create = 'create',
     join = 'join',
 }
 
 /**
  * 同步相关
- * todo:需要判断当前是否是第三方环境，不是就不要和发送相关操作
+ * todo：需要判断当前是否是第三方环境，不是就不要和发送相关操作
  */
 export class TalkCloud extends cc.EventTarget implements IStateSync {
     _pageLoaded = false;
@@ -128,26 +130,26 @@ export class TalkCloud extends cc.EventTarget implements IStateSync {
     init(): void {
         this.postMessage(IframeEvents.onFileMessage, { cmd: IframeEvents.Init });
     }
-    //下一页
+    // 下一页
     nextPage(): void {
         this.postMessage(IframeEvents.onFileMessage, { cmd: IframeEvents.NextPage });
     }
-    //上一页
+    // 上一页
     prevPage(): void {
         this.postMessage(IframeEvents.onFileMessage, { cmd: IframeEvents.PrevPage });
     }
-    //跳转页面
+    // 跳转页面
     pageTo(page: number): void {
         this.postMessage(IframeEvents.PageTo, { cmd: IframeEvents.PageTo, toPage: page });
     }
-    //设置总页数
+    // 设置总页数
     setTotalPages(page: number): void {
         this.postMessage(IframeEvents.SetPage, {
             cmd: IframeEvents.SetPage,
             totalPages: page,
         });
     }
-    //加载完成
+    // 加载完成
     onLoadComplete(): void {
         this.postMessage(IframeEvents.onLoadComplete, { coursewareRatio: 16 / 9 });
     }
@@ -202,17 +204,17 @@ export class TalkCloud extends cc.EventTarget implements IStateSync {
     }
 
     private registerEvent() {
-        //监听iframe过来的事件
+        // 监听iframe过来的事件
         window.addEventListener('message', this.onMessage.bind(this));
         // parent.addEventListener('message', this.onMessage.bind(this));
-        //注册 自定义 事件 ，组件状态更新
+        // 注册 自定义 事件 ，组件状态更新
         this.postMessage(IframeEvents.onFileMessage, {
             cmd: IframeEvents.DispatchMagixEvent,
             event: StateSyncEvent.CompStateUpdate,
         });
-        //监听 eduGame 初始化事件
+        // 监听 eduGame 初始化事件
         eduGame && eduGame.addEventListener(eduGame.Event.OnInitialize, this.onInit.bind(this));
-        //监听 eduGame 的页面切换事件
+        // 监听 eduGame 的页面切换事件
         eduGame && eduGame.addEventListener(eduGame.Event.OnPageSwitch, this.onPageChanged.bind(this));
         this.onLoadComplete();
     }
@@ -280,7 +282,7 @@ export class TalkCloud extends cc.EventTarget implements IStateSync {
             data = JSON.parse(data);
         }
         let payload = data.payload;
-        //自定义事件
+        // 自定义事件
         if (data.method === IframeEvents.onFileMessage) {
 
             switch (data.payload && data.payload.event) {
@@ -304,7 +306,7 @@ export class TalkCloud extends cc.EventTarget implements IStateSync {
                     break;
             }
         } else {
-            //公共事件
+            // 公共事件
             switch (data.method) {
                 case IframeEvents.PageTo:
                     this.handlePageChanged(data.toPage);
@@ -321,16 +323,14 @@ export class TalkCloud extends cc.EventTarget implements IStateSync {
 ```
 
 ### 函数说明
-- `registerEvent` ：初始化事件函数；
+- `registerEvent`：初始化事件函数；
     - 监听 window 的 `message` 消息；
     - 监听 `EduGame` 发出的消息，例如页面切换；
     - 向教室主动派发 `onLoadComplete` 事件，通知教室课件加载完成（这一步至关重要）。
-- `postMessage` : 消息发送函数；
+- `postMessage`：消息发送函数；
     - 参数必须为字符串
-- `onMessage` : 消息接收函数，因为本次适配使用 `onFileMessage` 接管所有自定义事件，所以将自定义事件与公共事件分开处理。
+- `onMessage`：消息接收函数，因为本次适配使用 `onFileMessage` 接管所有自定义事件，所以将自定义事件与公共事件分开处理。
 
 ## 参考链接
 
-更多注意事项请移步拓课云官方开发文档。
-
-- [拓课云官方开发文档](https://showdoc.talk-cloud.com/web/#/21?page_id=129)
+更多注意事项请查看 [**拓课云官方开发文档**](https://showdoc.talk-cloud.com/web/#/21?page_id=129)。

@@ -1,60 +1,36 @@
 # Cocos Creator 项目迁移
 
 Cocos ICE 基于 Cocos Creator 扩展而来，二者项目结构相似，因此用 Cocos Creator 开发的游戏在经过简单适配后可以迁移进 Cocos ICE 中作为独立组件使用。
-- [Cocos Creator 项目迁移](#cocos-creator-项目迁移)
-  - [项目目录介绍](#项目目录介绍)
-      - [Windows平台](#windows平台)
-      - [Mac平台](#mac平台)
-  - [组件基础](#组件基础)
-      - [组件模式](#组件模式)
-      - [组件分类](#组件分类)
-      - [注意事项](#注意事项)
-  - [属性面板配置](#属性面板配置)
-  - [迁移示例](#迁移示例)
-      - [代码搬运](#代码搬运)
-      - [Bundle 调整](#bundle-调整)
-      - [场景调整](#场景调整)
-      - [脚本调整](#脚本调整)
-          - [继承 EduElementAbstract](#继承-eduelementabstract)
-          - [增加 EduElement 组件](#增加-eduelement-组件)
-          - [Bundle 加载逻辑调整](#bundle-加载逻辑调整)
-          - [增加属性面板自定义配置](#增加属性面板自定义配置)
-      - [增加 desc.json 文件](#增加-descjson-文件)
-      - [预览组件](#预览组件)
-  - [总结](#总结)
-
 ## 项目目录介绍
 
-编辑器有两种组件库模式：`云端组件` 与 `本地组件`，`云端组件` 目录在系统目录下由编辑器动态生成，`本地组件` 目录在应用内，因为编辑器默认为 `云端组件` 模式，所以 `本地组件` 目录是空的，Mac 和 Windows 平台的目录有些许差异，具体如下：
+编辑器有两种组件库模式：**云端组件** 与 **本地组件**，**云端组件** 目录在系统目录下由编辑器动态生成，**本地组件** 目录在应用内，因为编辑器默认为 **云端组件** 模式，所以 **本地组件** 目录是空的，Mac 和 Windows 平台的目录有些许差异，具体如下：
 
-#### Windows平台
+- Windows平台
 截至 v1.4 版本，**Cocos ICE** 在 **Windows** 平台依然是绿色版软件（解压即用）
-- 云端组件目录：`C:\Users\用户名\.EduEditor\ICE_Project\assets\eduComponent`
-- 本地组件目录：`resources\builtin\edu-editor\ui-component\external`
+  - 云端组件目录：`C:\Users\用户名\.EduEditor\ICE_Project\assets\eduComponent`
+  - 本地组件目录：`resources\builtin\edu-editor\ui-component\external`
 
-#### Mac平台
+- Mac平台
 
-- 云端组件目录：`/Users/用户名/.EduEditor/ICE_Project/assets/eduComponent`
-- 本地组件目录：`Contents/Resources/builtin/edu-editor/ui-component\external`
-  - Mac `本地组件` 打开方式：应用程序中找到 **Cocos ICE** 应用程序，右键单击 **显示包内容** 
+  - 云端组件目录：`/Users/用户名/.EduEditor/ICE_Project/assets/eduComponent`
+  - 本地组件目录：`Contents/Resources/builtin/edu-editor/ui-component\external`
+    - Mac **本地组件** 打开方式：应用程序中找到 **Cocos ICE** 应用程序，右键单击 **显示包内容**。
   
-    ![显示包内容](./img/macOS.png)
+      ![显示包内容](./img/macOS.png)
 
 
 ## 组件基础
 
 这一小节将介绍组件库的一些基础知识与注意事项，方便您快速了解组件库。
 
-#### 组件模式
+### 组件模式
 
-组件库分为本地组件和云端组件两种模式，本地组件即所有组件存在本地组件目录中，云端组件下载下来的组件存放于云端组件目录中，目录地址参考 [项目目录介绍](#项目目录介绍)。
-
-组件模式切换只需要找到配置脚本 `edu-editor\source\edu\settings\default.ts`，修改 `depend-local-resource` 属性，设置为 **true** 则扫描本地资源，反之请求服务器资源
+组件模式切换只需要找到配置脚本 `edu-editor\source\edu\settings\default.ts`，修改 `depend-local-resource` 属性，设置为 `true` 则扫描本地资源，反之请求服务器资源。
 
 ```js
     // 设置 settings 的一些默认值
     export const editor = {
-    // 是否依赖本地资源，设置为true则扫描本地资源，反之请求服务器资源
+    // 是否依赖本地资源，设置为 true 则扫描本地资源，反之请求服务器资源
     'depend-local-resource': true,
     // 是否开启批量上传的功能
     'batch-upload-assets': false,
@@ -73,9 +49,7 @@ Cocos ICE 基于 Cocos Creator 扩展而来，二者项目结构相似，因此�
     },
     ...
 ``` 
-
-
-#### 组件分类
+### 组件分类
 
 编辑器靠 `desc.json` 文件识别组件，配置代码如下：
 ```js
@@ -83,17 +57,17 @@ Cocos ICE 基于 Cocos Creator 扩展而来，二者项目结构相似，因此�
  * 组件定义的格式
  */
 export interface ICustomComponent {
-    componentID: string; // 组件id
+    componentID: string; // 组件 id
     name: string; // 组件名称
     version: string; // 组件版本
-    prefab: string; // prefab的db的路径或者相对路径
+    prefab: string; // prefab 的 db 的路径或者相对路径
     icon: string; // 显示的图片路径
     type: ComponentsType; // 类型
-    typeOrder?: number; // type的排序，数字越大放越后面
+    typeOrder?: number; // type 的排序，数字越大放越后面
     tab: TabType | string; // 页签（分组）
     tabOrder?: number; // tab 的排序，数字越大，放越后面
     group?: string; // 子分组
-    groupOrder?: number; // group的排序，数字越大，放越后面
+    groupOrder?: number; // group 的排序，数字越大，放越后面
     tag?: string[]; // 这个组件的标签
     description?: string; // 对这个组件的描述
     author?: string; // 作者
@@ -112,19 +86,19 @@ export interface ICustomComponent {
 ![显示包内容](./img/groupType.jpg)
 
 
-#### 注意事项
+### 注意事项
 - 暂不支持本地组件和云端组件共存，开启本地组件模式时，编辑器依然会扫描云端组件目录，当同一组件同时出现在云端组件目录和本地组件目录中时，二者会互相干扰，导致组件运行异常。
 - `desc.json` 必须存在且存在于组件根目录，组件识别、组件上传都依赖 `desc.json`， `prefab` 属性用于记录组件初始入口，不能为空。
-- 编辑器自带 `主场景(Main Scene)` ，所以不支持组件使用 `Scene` ，也不支持场景加载和切换。
+- 编辑器自带 `主场景(Main Scene)` ，所以不支持组件使用 `Scene`，也不支持场景加载和切换。
   - 由于组件不支持使用 `Scene`，所以组件需要以 `Prefab` 的形式存在，组件添加到场景中时也是以 `Prefab` 的形式存在的。
-- 编辑器自带 `主摄像机(Main Camera)` ，如若组件内自带其他 `Camera` ，大概率会与主摄像机产生冲突导致画面显示异常，请自行做好调试。
+- 编辑器自带 `主摄像机(Main Camera)`，如若组件内自带其他 `Camera` ，大概率会与主摄像机产生冲突导致画面显示异常，请自行做好调试。
 
 - 组件脱离 `asset` 存在，目录中理论上也无法存在 `resources` 文件夹，所以无法直接使用 `cc.assetManage` 和 `cc.resource` 加载组件内资源，如果有需要，可以将相关文件夹配置为 `Bundle`，使用编辑器内置的 `Bundle` 加载方法加载资源，操作如下：
-  - 配置Bundle，为避免打包之后 `Bundle` 加载异常，组件内的 **Bundle 优先级** 统一设置为 **3**。
+  - 配置 Bundle，为避免打包之后 `Bundle` 加载异常，组件内的 **Bundle 优先级** 统一设置为 **3**。
 
     <img src='./img/bundle.jpg' alt='配置Bundle' width='500'>
 
-  - 修改Bundle加载逻辑，代码示例：
+  - 修改 Bundle 加载逻辑，代码示例：
   - 
     ```js
     import {BundleLoader} from "GameConfig";
@@ -154,7 +128,7 @@ export interface ICustomComponent {
 
 ## 属性面板配置
 
-如下图所示，组件一般都带有各种各样的配置性选项，如果想要一个属性在属性面板中显示，需要使用 `@eduProperty` 定义属性，详细请查看  [自定义属性](../develop-component/develop-properties/index.md)。
+如下图所示，组件一般都带有各种各样的配置性选项，如果想要一个属性在属性面板中显示，需要使用 `@eduProperty` 定义属性，详细请查看  [**自定义属性**](../develop-component/develop-properties/index.md)。
 
 ![属性面板](./img/eduProperty.jpg)
 
@@ -168,7 +142,7 @@ export interface ICustomComponent {
 
 #### 代码搬运
 
-进入Cocos ICE **研发模式** ，在本地组件目录新建 `froGame` 文件夹；
+进入 Cocos ICE **研发模式** ，在本地组件目录新建 `froGame` 文件夹；
 
 ![新建FrogGame](./img/frogGameNew.jpg)
 
@@ -186,7 +160,7 @@ export interface ICustomComponent {
 
 #### 场景调整
 
-将游戏场景文件 `frog.scene` 转为 `frog.prefab`文件：
+将游戏场景文件 `frog.scene` 转为 `frog.prefab` 文件：
 
 <img src='./img/scene2Prefab.jpg' alt='frog Bundle 配置' width='400'> <img src='./img/prefab.jpg' alt='frog Bundle 配置' width='400'>
 
@@ -194,7 +168,7 @@ export interface ICustomComponent {
 
 调整完场景配置，接下来对脚本代码进行调整以便在运行时以及打包后运行正常。
 
-###### 继承 EduElementAbstract
+##### 继承 EduElementAbstract
 
 组件如果需要在属性面板展示自定义属性，必须继承 `EduElementAbstract`，例如：
 
@@ -202,7 +176,7 @@ export interface ICustomComponent {
 export default class FrogAnswerElement extends EduElementAbstract{}
 ```
 
-###### 增加 EduElement 组件
+##### 增加 EduElement 组件
 
 属性面板默认是空的，没有任何属性配置，如图：
 
@@ -212,13 +186,13 @@ export default class FrogAnswerElement extends EduElementAbstract{}
 
 <img src='./img/eduElemntPanel.jpg' alt='frog Bundle 配置' width='600'> <img src='./img/eduElement.jpg' alt='frog Bundle 配置' width='600'>
 
-其中 `EduElement` 目前主要包括 `角度`、`大小`、`层级`、`位置`、`节点树` 五个配置项。
+其中 `EduElement` 目前主要包括 角度、大小、层级、位置、节点树 五个配置项。
 
-- 层级调整无法穿透节点、组件，例如；当B组件层级比A组件层级高时，A组件中的子节点永远无法通过调整层级的方式浮于B组件之上。
-- 节点树会显示当前画布上的所有组件，包括子组件，详细参考 [节点树](../develop-component/node-setting/index.md)。
+- 层级调整无法穿透节点、组件，例如；当B组件层级比 A 组件层级高时，A 组件中的子节点永远无法通过调整层级的方式浮于 B 组件之上。
+- 节点树会显示当前画布上的所有组件，包括子组件，详细参考 [**节点树**](../develop-component/node-setting/index.md)。
 
 
-###### Bundle 加载逻辑调整
+##### Bundle 加载逻辑调整
 
 将项目内所有使用 `cc.assetManage` 和 `cc.resource` 加载 `Bundle` 资源的代码全部改为 `BundleLoader` 加载，详细原因请参考 [注意事项](#注意事项)，参考下面示例：
 
@@ -282,9 +256,9 @@ export default class FrogAnswerElement extends EduElementAbstract{}
     }
   ```
 
-###### 增加属性面板自定义配置
+##### 增加属性面板自定义配置
 
-下面是标题背景的属性面板配置示例，详细请查看 [自定义属性](../develop-component/develop-properties/index.md)。
+下面是标题背景的属性面板配置示例，详细请查看 [**自定义属性**](../develop-component/develop-properties/index.md)。
 
 ```js
 import FrogConstant from "../frogConstant";
@@ -305,7 +279,7 @@ export default class FrogImageElement extends EduElementAbstract {
 ```
 #### 增加 desc.json 文件
 
-前面提到，编辑器靠 `desc.json` 识别组件，所以想要组件在组件面板中展示，就必须配置desc.json，详细配置如下：
+前面提到，编辑器靠 `desc.json` 识别组件，所以想要组件在组件面板中展示，就必须配置 `desc.json`，详细配置如下：
 
 ```js
 {
@@ -319,7 +293,7 @@ export default class FrogImageElement extends EduElementAbstract {
     "name": "青蛙游戏"
 }
 ```
-其中 `prefab` 属性的值是 **入口prefab的路径**，在这个游戏中，就是我们刚才拖动生成的 **forg.prefab**，`icon` 属性是组件在组件面板中展示的缩略图，可以先留空。
+其中 `prefab` 属性的值是 **入口 prefab 的路径**，在这个游戏中，就是我们刚才拖动生成的 `forg.prefab`，`icon` 属性是组件在组件面板中展示的缩略图，可以先留空。
 
 #### 预览组件
 
@@ -331,9 +305,8 @@ Cocos ICE 切换到课程制作模式，可以看到游戏组件面板中已经�
 
 <img src='./img/gamePreview.jpg' alt='游戏面板' width='500'>
 
-
 ## 总结
 
-恭喜您完成了将 Cocos Creator 制作的游戏搬运到 Cocos ICE 中！希望这篇教程能帮助您了解 Cocos Creator 游戏搬运至 Cocos ICE 的大致流程和注意事项。本片教程中的 [组件注意事项](#注意事项) 要着重关注，能帮您少走一些弯路。
+恭喜您完成了将 Cocos Creator 制作的游戏搬运到 Cocos ICE 中！希望这篇教程能帮助您了解 Cocos Creator 游戏搬运至 Cocos ICE 的大致流程和注意事项。本片教程中的 [**组件注意事项**](#注意事项) 要着重关注，能帮您少走一些弯路。
 
-此外如果希望将完成的游戏发布到服务器上分享给好友玩耍，可以阅读 [构建发布](./../build/index.md) 一节的内容。
+此外如果希望将完成的游戏发布到服务器上分享给好友玩耍，可以阅读 [**构建发布**](./../build/index.md) 一节的内容。

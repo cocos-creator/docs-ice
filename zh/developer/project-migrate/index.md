@@ -140,7 +140,7 @@ export interface ICustomComponent {
 
 > **注意**：请确保您开启了本地组件模式，参考[组件模式](#组件模式)。
 
-#### 代码搬运
+### 代码搬运
 
 进入 Cocos ICE **研发模式** ，在本地组件目录新建 `froGame` 文件夹；
 
@@ -148,7 +148,7 @@ export interface ICustomComponent {
 
 将 Cocos Creator 项目中 `asset` 目录下的全部文件拷贝至 `froGame` 文件夹中；
 
-#### Bundle 调整
+### Bundle 调整
 
 将原有 `resources` 改名为 `res`，并更改 `Bundle` 配置：
 
@@ -158,17 +158,17 @@ export interface ICustomComponent {
 
 <img src='./img/frogBundle.jpg' alt='frog Bundle 配置' width='500'>
 
-#### 场景调整
+### 场景调整
 
 将游戏场景文件 `frog.scene` 转为 `frog.prefab` 文件：
 
 <img src='./img/scene2Prefab.jpg' alt='frog Bundle 配置' width='400'> <img src='./img/prefab.jpg' alt='frog Bundle 配置' width='400'>
 
-#### 脚本调整
+### 脚本调整
 
 调整完场景配置，接下来对脚本代码进行调整以便在运行时以及打包后运行正常。
 
-##### 继承 EduElementAbstract
+#### 继承 EduElementAbstract
 
 组件如果需要在属性面板展示自定义属性，必须继承 `EduElementAbstract`，例如：
 
@@ -176,7 +176,7 @@ export interface ICustomComponent {
 export default class FrogAnswerElement extends EduElementAbstract{}
 ```
 
-##### 增加 EduElement 组件
+#### 增加 EduElement 组件
 
 属性面板默认是空的，没有任何属性配置，如图：
 
@@ -192,7 +192,7 @@ export default class FrogAnswerElement extends EduElementAbstract{}
 - 节点树会显示当前画布上的所有组件，包括子组件，详细参考 [**节点树**](../develop-component/node-setting/index.md)。
 
 
-##### Bundle 加载逻辑调整
+#### Bundle 加载逻辑调整
 
 将项目内所有使用 `cc.assetManage` 和 `cc.resource` 加载 `Bundle` 资源的代码全部改为 `BundleLoader` 加载，详细原因请参考 [注意事项](#注意事项)，参考下面示例：
 
@@ -256,7 +256,7 @@ export default class FrogAnswerElement extends EduElementAbstract{}
     }
   ```
 
-##### 增加属性面板自定义配置
+#### 增加属性面板自定义配置
 
 下面是标题背景的属性面板配置示例，详细请查看 [**自定义属性**](../develop-component/develop-properties/index.md)。
 
@@ -277,7 +277,7 @@ export default class FrogImageElement extends EduElementAbstract {
     }
 }
 ```
-#### 增加 desc.json 文件
+### 增加 desc.json 文件
 
 前面提到，编辑器靠 `desc.json` 识别组件，所以想要组件在组件面板中展示，就必须配置 `desc.json`，详细配置如下：
 
@@ -295,7 +295,7 @@ export default class FrogImageElement extends EduElementAbstract {
 ```
 其中 `prefab` 属性的值是 **入口 prefab 的路径**，在这个游戏中，就是我们刚才拖动生成的 `forg.prefab`，`icon` 属性是组件在组件面板中展示的缩略图，可以先留空。
 
-#### 预览组件
+### 预览组件
 
 Cocos ICE 切换到课程制作模式，可以看到游戏组件面板中已经出现我们的青蛙游戏：
 

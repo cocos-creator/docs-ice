@@ -8,12 +8,12 @@ Cocos ICE 基于 Cocos Creator 扩展而来，二者项目结构相似，因此�
 - Windows平台
 截至 v1.4 版本，**Cocos ICE** 在 **Windows** 平台依然是绿色版软件（解压即用）
   - 云端组件目录：`C:\Users\用户名\.EduEditor\ICE_Project\assets\eduComponent`
-  - 本地组件目录：`resources\builtin\edu-editor\ui-component\external`
+  - 本地组件目录：`.\resources\builtin\edu-editor\ui-component\external`
 
 - Mac平台
 
-  - 云端组件目录：`/Users/用户名/.EduEditor/ICE_Project/assets/eduComponent`
-  - 本地组件目录：`Contents/Resources/builtin/edu-editor/ui-component\external`
+  - 云端组件目录：`./Users/用户名/.EduEditor/ICE_Project/assets/eduComponent`
+  - 本地组件目录：`./Contents/Resources/builtin/edu-editor/ui-component/external`
     - Mac **本地组件** 打开方式：应用程序中找到 **Cocos ICE** 应用程序，右键单击 **显示包内容**。
   
       ![显示包内容](./img/macOS.png)
@@ -25,7 +25,7 @@ Cocos ICE 基于 Cocos Creator 扩展而来，二者项目结构相似，因此�
 
 ### 组件模式
 
-组件模式切换只需要找到配置脚本 `edu-editor\source\edu\settings\default.ts`，修改 `depend-local-resource` 属性，设置为 `true` 则扫描本地资源，反之请求服务器资源。
+组件模式切换只需要找到配置脚本 `.\edu-editor\source\edu\settings\default.ts`，修改 `depend-local-resource` 属性，设置为 `true` 则扫描本地资源，反之请求服务器资源。
 
 ```js
     // 设置 settings 的一些默认值

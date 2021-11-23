@@ -9,6 +9,7 @@
 ## 目前支持的配置
 
 - [服务端配置](server/index.md)
+- [素材上传](upload/index.md)
 - [分辨率配置](resolution/index.md)
 - [工具栏配置](toolbar/index.md)
 - [页面配置](page/index.md)
@@ -37,7 +38,7 @@ internal: {
 
 // 预览相关
     // 预览的虚拟设备
-    preview: { 
+    preview: {
         'virtual-devices': [
             // {id: 1001, name: 'iPhone7'},
             // {id: 1002, name: '小米9'},

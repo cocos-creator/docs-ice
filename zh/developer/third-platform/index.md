@@ -5,6 +5,7 @@ Cocos ICE 适配第三方平台，便于用户将课件用于不同的第三方�
 ## 目前支持的平台
 
 - [拓课云](talk-cloud/index.md)
+- [ClassIn](class-in/index.md)
 
 ## 适配逻辑
 

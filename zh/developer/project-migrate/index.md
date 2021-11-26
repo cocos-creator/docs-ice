@@ -141,7 +141,7 @@ export interface ICustomComponent {
 
 <img src='./img/frogGameMenu.jpg' alt='frogGame目录' width='200'> <img src='./img/frogGameAsset.jpg' alt='frogGame Asset文件夹' width='200'>
 
-> **注意**：请确保您开启了本地组件模式，参考[组件模式](#组件模式)。
+> **注意**：请确保您开启了本地组件模式，参考 [组件模式](#组件模式)。
 
 ### 代码搬运
 
@@ -193,7 +193,6 @@ export default class FrogAnswerElement extends EduElementAbstract{}
 
 - 层级调整无法穿透节点、组件，例如；当B组件层级比 A 组件层级高时，A 组件中的子节点永远无法通过调整层级的方式浮于 B 组件之上。
 - 节点树会显示当前画布上的所有组件，包括子组件，详细参考 [**节点树**](../develop-component/node-setting/index.md)。
-
 
 #### Bundle 加载逻辑调整
 

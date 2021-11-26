@@ -1,23 +1,24 @@
 # Cocos Creator 项目迁移
 
 Cocos ICE 基于 Cocos Creator 扩展而来，二者项目结构相似，因此用 Cocos Creator 开发的游戏在经过简单适配后可以迁移进 Cocos ICE 中作为独立组件使用。
-## 项目目录介绍
+
+## 项目目录
 
 编辑器有两种组件库模式：**云端组件** 与 **本地组件**，**云端组件** 目录在系统目录下由编辑器动态生成，**本地组件** 目录在应用内，因为编辑器默认为 **云端组件** 模式，所以 **本地组件** 目录是空的，Mac 和 Windows 平台的目录有些许差异，具体如下：
 
 - Windows平台
-截至 v1.4 版本，**Cocos ICE** 在 **Windows** 平台依然是绿色版软件（解压即用）
-  - 云端组件目录：`C:\Users\用户名\.EduEditor\ICE_Project\assets\eduComponent`
-  - 本地组件目录：`.\resources\builtin\edu-editor\ui-component\external`
+    > 截至 v1.4 版本，**Cocos ICE** 在 **Windows** 平台依然是绿色版软件（解压即用）。
+
+    - 云端组件目录：`C:\Users\用户名\.EduEditor\ICE_Project\assets\eduComponent`
+    - 本地组件目录：`.\resources\builtin\edu-editor\ui-component\external`
 
 - Mac平台
 
-  - 云端组件目录：`./Users/用户名/.EduEditor/ICE_Project/assets/eduComponent`
-  - 本地组件目录：`./Contents/Resources/builtin/edu-editor/ui-component/external`
-    - Mac **本地组件** 打开方式：应用程序中找到 **Cocos ICE** 应用程序，右键单击 **显示包内容**。
-  
-      ![显示包内容](./img/macOS.png)
+    - 云端组件目录：`./Users/用户名/.EduEditor/ICE_Project/assets/eduComponent`
+    - 本地组件目录：`./Contents/Resources/builtin/edu-editor/ui-component/external`
+        - Mac **本地组件** 打开方式：应用程序中找到 **Cocos ICE** 应用程序，右键单击 **显示包内容**。
 
+            ![显示包内容](./img/MacOS.png)
 
 ## 组件基础
 
@@ -48,10 +49,12 @@ Cocos ICE 基于 Cocos Creator 扩展而来，二者项目结构相似，因此�
         protocol: 'http',
     },
     ...
-``` 
+```
+
 ### 组件分类
 
 编辑器靠 `desc.json` 文件识别组件，配置代码如下：
+
 ```js
 /**
  * 组件定义的格式
@@ -85,21 +88,21 @@ export interface ICustomComponent {
 
 ![显示包内容](./img/groupType.jpg)
 
-
 ### 注意事项
+
 - 暂不支持本地组件和云端组件共存，开启本地组件模式时，编辑器依然会扫描云端组件目录，当同一组件同时出现在云端组件目录和本地组件目录中时，二者会互相干扰，导致组件运行异常。
 - `desc.json` 必须存在且存在于组件根目录，组件识别、组件上传都依赖 `desc.json`， `prefab` 属性用于记录组件初始入口，不能为空。
 - 编辑器自带 `主场景(Main Scene)` ，所以不支持组件使用 `Scene`，也不支持场景加载和切换。
-  - 由于组件不支持使用 `Scene`，所以组件需要以 `Prefab` 的形式存在，组件添加到场景中时也是以 `Prefab` 的形式存在的。
+    - 由于组件不支持使用 `Scene`，所以组件需要以 `Prefab` 的形式存在，组件添加到场景中时也是以 `Prefab` 的形式存在的。
 - 编辑器自带 `主摄像机(Main Camera)`，如若组件内自带其他 `Camera` ，大概率会与主摄像机产生冲突导致画面显示异常，请自行做好调试。
 
 - 组件脱离 `asset` 存在，目录中理论上也无法存在 `resources` 文件夹，所以无法直接使用 `cc.assetManage` 和 `cc.resource` 加载组件内资源，如果有需要，可以将相关文件夹配置为 `Bundle`，使用编辑器内置的 `Bundle` 加载方法加载资源，操作如下：
-  - 配置 Bundle，为避免打包之后 `Bundle` 加载异常，组件内的 **Bundle 优先级** 统一设置为 **3**。
+    - 配置 Bundle，为避免打包之后 `Bundle` 加载异常，组件内的 **Bundle 优先级** 统一设置为 **3**。
 
     <img src='./img/bundle.jpg' alt='配置Bundle' width='500'>
 
-  - 修改 Bundle 加载逻辑，代码示例：
-  - 
+    - 修改 Bundle 加载逻辑，代码示例：
+
     ```js
     import {BundleLoader} from "GameConfig";
     @ccclass
@@ -197,6 +200,7 @@ export default class FrogAnswerElement extends EduElementAbstract{}
 将项目内所有使用 `cc.assetManage` 和 `cc.resource` 加载 `Bundle` 资源的代码全部改为 `BundleLoader` 加载，详细原因请参考 [注意事项](#注意事项)，参考下面示例：
 
 - 修改前的代码：
+
   ```js
     @ccclass
     export default class FrogUtil {
@@ -227,7 +231,9 @@ export default class FrogAnswerElement extends EduElementAbstract{}
     }
 
   ```
+
 - 修改后的代码：
+
   ```js
     import { BundleLoader } from "GameConfig";
     @ccclass
@@ -277,6 +283,7 @@ export default class FrogImageElement extends EduElementAbstract {
     }
 }
 ```
+
 ### 增加 desc.json 文件
 
 前面提到，编辑器靠 `desc.json` 识别组件，所以想要组件在组件面板中展示，就必须配置 `desc.json`，详细配置如下：
@@ -293,6 +300,7 @@ export default class FrogImageElement extends EduElementAbstract {
     "name": "青蛙游戏"
 }
 ```
+
 其中 `prefab` 属性的值是 **入口 prefab 的路径**，在这个游戏中，就是我们刚才拖动生成的 `forg.prefab`，`icon` 属性是组件在组件面板中展示的缩略图，可以先留空。
 
 ### 预览组件

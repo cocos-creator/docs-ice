@@ -2,9 +2,8 @@
 
 可以配置调色盘内的颜色预设。
 
-```js
-presetColors: [
-  '#000000',
-  '#ffffff',
-]
+```json
+{
+  "preset-colors": ["#000000", "#ffffff"]
+}
 ```

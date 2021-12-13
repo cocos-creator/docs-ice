@@ -13,3 +13,4 @@ _book/
 *.pdf
 *.mobi
 *.history
+.idea/

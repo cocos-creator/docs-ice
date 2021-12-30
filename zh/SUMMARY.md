@@ -29,7 +29,8 @@
     - [动画](tools/object/animation/index.md)
   - [互动组件](tools/component/index.md)
 - [素材库](resource/index.md)
-- [事件](event/index.md)
+- [动作动效](effect/index.md)
+- [交互事件](event/index.md)
 - [模式](mode/index.md)
 - [互动视频制作](make-interactive-video/index.md)
 

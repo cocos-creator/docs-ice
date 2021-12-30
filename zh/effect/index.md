@@ -28,7 +28,7 @@
 
         ![触发器](img/trigger.png)
 
-    - **更改和删除动作动效**：用户可以点击 ![更改](img/changeeffect.png) 和 ![删除](img/deleteeffect.png) 按钮，对当前的动作动效进行更改和删除操作。
+    - **更改和删除动作动效**：用户可以点击 ![更改](img/changeeffect.png) 或者 ![删除](img/deleteeffect.png) 按钮，对当前的动作动效进行 **更改** 或 **删除** 操作。
 
 ## 列表
 

@@ -77,7 +77,7 @@ export default class EduElement extends EduElementAbstract {
 > 关于折叠组件的 `head`（`EduImage`）自定义，需要进一步完善。
 
 ## `@eduProperty` 参考字段
- 
+
 | 字段 | 说明 |
 | :-- | :-- |
 | displayName  | 属性显示在面板上的名字，支持 i18n（`i18n:xxx`）|

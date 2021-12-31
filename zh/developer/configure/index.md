@@ -13,9 +13,11 @@
 - [分辨率配置](resolution/index.md)
 - [工具栏配置](toolbar/index.md)
 - [页面配置](page/index.md)
-- [属性配置](properties/index.md)
-- [互动视频配置](video/index.md)
-- [多端控制配置](multi-terminal/index.md)
+    - [对象配置](object/index.md)
+        - [通用配置](object/properties/index.md)
+        - [文字配置](object/word/index.md)
+        - [动画配置](object/animation/index.md)
+        - [视频配置](object/video/index.md)
 
 ### 其他配置
 

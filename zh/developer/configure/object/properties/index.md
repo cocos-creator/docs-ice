@@ -44,7 +44,9 @@ export default class EduImage extends EduElementAbstract{
 - **JSON 配置示例**：
 
     ```json
-    "presetColors": ["#000000", "#ffffff"]
+    {
+      "preset-colors": ["#000000", "#ffffff"]
+    }
     ```
 
 ## 多端控制配置

@@ -61,7 +61,7 @@ export const ICEPageFadeIn: IICEEventPageTransitionRegister = {
 iceEvent.registerPageTransition(ICEPageFadeIn);
 ```
 
-### 关于ICEPageTransitionBase
+### 关于 ICEPageTransitionBase
 
 每一个页面动效都需要绑定一个脚本，用于编写实现页面切换的具体逻辑，脚本必须继承 `ICEPageTransitionBase`。
 

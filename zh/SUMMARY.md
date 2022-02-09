@@ -11,7 +11,7 @@
     - [编辑器界面总览](getting-started/interface-overview/index.md)
     - [课件制作](getting-started/make-courseware/index.md)
     - [互动视频制作](getting-started/make-interactive-video/index.md)
-    - [预览](preview/index.md)
+    - [预览](getting-started/preview/index.md)
     - [上传和发布](getting-started/publish-lesson/index.md)
     - [获取帮助和支持](getting-started/help/index.md)
 - [版本更新说明](version-info/index.md)

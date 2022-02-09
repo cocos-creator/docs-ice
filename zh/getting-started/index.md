@@ -9,6 +9,5 @@ Cocos ICE 互动课件编辑器（全称 **Cocos Interactive Courseware Editor**
 - [编辑器界面总览](interface-overview/index.md)
 - [课件制作](make-courseware/index.md)
 - [互动视频制作](make-interactive-video/index.md)
-- [预览](preview/index.md)
 - [上传和发布](publish-lesson/index.md)
 - [获取帮助和支持](help/index.md)

@@ -18,10 +18,10 @@
 
 - 在页面上悬停时，点击 ![预览](img/preview.png) 可以从当前页面预览。
 
-- 选中页面时，可以在右侧属性设置面板编辑页面属性，设置背景颜色、图片和页面切换动效。
+- 选中页面时，可以在右侧属性设置面板编辑页面属性，设置背景颜色、图片和切页动效。
 
     ![页面属性](img/page_component.png)
 
-    - 目前页面切换动效支持淡入/淡出、覆盖、揭开、推入，还支持企业 [**自定义页面动效**](../developer/develop-page_effect/index.md)
+    - 目前切页动效支持淡入/淡出、覆盖、揭开、推入，还支持企业 [**自定义切页动效**](../developer/develop-page_effect/index.md)。
 
-        ![页面动效](img/page_animation.png)
+        ![切页动效](img/page_animation.png)

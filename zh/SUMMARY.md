@@ -52,7 +52,7 @@
     - [自定义属性](developer/develop-component/develop-properties/index.md)
     - [节点设置](developer/develop-component/node-setting/index.md)
 - [自定义事件](developer/develop-event/index.md)
-- [自定义页面动效](developer/develop-page_effect/index.md)
+- [自定义切页动效](developer/develop-page_effect/index.md)
 - [扩展右键菜单](developer/menu-extension/index.md)
 - [强制刷新页面缩略图](developer/refresh-page/index.md)
 - [自定义面板](developer/develop-panel/index.md)

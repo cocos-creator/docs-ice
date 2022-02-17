@@ -39,14 +39,6 @@ internal: {
 },
 
 // 预览相关
-    // 预览的虚拟设备
-    preview: {
-        'virtual-devices': [
-            // {id: 1001, name: 'iPhone7'},
-            // {id: 1002, name: '小米9'},
-            // {id: 1003, name: 'iPad mini'},
-        ],
-    },
     // 是否启用默认分辨率进行预览
     'default-resolution-preview': true,
 

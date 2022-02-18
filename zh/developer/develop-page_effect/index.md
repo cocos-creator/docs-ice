@@ -97,7 +97,7 @@ iceEvent.registerPageTransition(ICEPageFadeIn);
 
 - `pageTransition`：每一个切页动效都需要绑定一个脚本，用于编写实现页面切换的具体逻辑，脚本必须继承 `ICEPageTransitionBase`。
 
-注册成功之后，切换动效会展示在属性面板中的 `动效` 选项中。
+注册成功之后，切换动效会展示在属性面板中的 **动效** 选项中。
 
 ## 最后
 

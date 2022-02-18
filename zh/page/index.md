@@ -22,6 +22,6 @@
 
     ![页面属性](img/page_component.png)
 
-    - 目前切页动效支持淡入/淡出、覆盖、揭开、推入，还支持企业 [**自定义切页动效**](../developer/develop-page_effect/index.md)。
+    - 目前切页动效支持 **淡入/淡出**、**覆盖**、**揭开** 和 **推入**，还支持企业 [**自定义切页动效**](../developer/develop-page_effect/index.md)。
 
         ![切页动效](img/page_animation.png)

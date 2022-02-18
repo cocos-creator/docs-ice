@@ -368,7 +368,7 @@ export class ClassIn extends cc.EventTarget implements IStateSync {
 与 ClassIn 平台约定，需要用户自己打包课程并部署完毕后，将课程链接配置在 `XXX.edu` 文件中使用，详细步骤如下：
 
 - 打包发布课程，具体操作请参考 [**构建发布**](./../../build/index.md)；
-- 部署课程，具体参考：
+- 部署课程，具体操作请参考：[**项目部署**](./../../build/deployment/index.md)；
 - 新建 `ClassInDemo.edu` 文件，文件内容如下：
 
   ```js

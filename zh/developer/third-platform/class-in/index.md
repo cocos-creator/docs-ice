@@ -18,6 +18,7 @@ ClassIn 提供了 window 层接口，通过 `window.classInApp` 实现与客户�
 - 获取 fileContent：`fileContent` (H5 派发给教室)；
 
 - 消息发送：`sendPalette` (H5 派发给教室)；
+
     - **参数**
 
         ```js
@@ -44,6 +45,7 @@ ClassIn 提供了 window 层接口，通过 `window.classInApp` 实现与客户�
   > **注意**：`status` 必须是字符串类型且长度不得超过 1M，如单次需要同步的内容比较多，请拆分多个 `palette`，`sendBack` 为 `bool` 类型，如需要反馈，客户端同步成功后将根据 `status` 回传：`status` 长度为 0，则客户端回传将调用 `onClearPalette`，否则调用 `onPalette` 回传 `status`。
 
 - 消息接收：`onPalette`；
+
     - **调用示例**
 
         ```js
@@ -388,4 +390,3 @@ export class ClassIn extends cc.EventTarget implements IStateSync {
 - 课程中从云盘打开 `ClassInDemo.edu` 文件。
 
 这样您的课程就已成功在 ClassIn 平台运行了。
-

@@ -14,7 +14,7 @@
 
     ![编辑互动事件](img/edit_event.png)
 
-    - **更改和删除交互事件**：用户可以点击 ![更改](img/change_event.png) 和 ![删除](img/delete_event.png) 按钮，对当前的交互事件进行更改和删除操作。
+3. **更改和删除交互事件**：用户可以点击 ![更改](img/change_event.png) 和 ![删除](img/delete_event.png) 按钮，对当前的交互事件进行更改和删除操作。
 
 ## 互动事件介绍
 

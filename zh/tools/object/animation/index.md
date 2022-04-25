@@ -2,7 +2,7 @@
 
 ## 插入动画
 
-动画目前支持本地或素材库插入 Spine、DragonBones、粒子、GIF、序列帧动画。
+动画目前支持本地或素材库插入 Spine、DragonBones、粒子、GIF 和序列帧动画。
 
 ![插入动画](img/animation2.png)
 

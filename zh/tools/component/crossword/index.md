@@ -2,7 +2,7 @@
 
 工具栏点击 **题目模板**，下载完 **CrossWord模板** 后，便可选择 CrossWord 模板，将模板插入到编辑器内。
 
-## CrossWord模板属性配置
+## CrossWord 模板属性配置
 
 选中CrossWord模板，便可在编辑右侧的属性面板内，进行模板的属性配置。
 

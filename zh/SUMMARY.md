@@ -6,15 +6,11 @@
 
 - [新手上路](getting-started/index.md)
     - [下载和安装](getting-started/install/index.md)
-    - [注册和授权](getting-started/license/index.md)
-    - [使用课程广场](getting-started/lesson-square/index.md)
     - [编辑器界面总览](getting-started/interface-overview/index.md)
     - [课件制作](getting-started/make-courseware/index.md)
-    - [互动视频制作](getting-started/make-interactive-video/index.md)
     - [预览](getting-started/preview/index.md)
-    - [上传和发布](getting-started/publish-lesson/index.md)
+    - [上传](getting-started/publish-lesson/index.md)
     - [获取帮助和支持](getting-started/help/index.md)
-- [版本更新说明](version-info/index.md)
 
 ## 编辑器手册
 
@@ -28,12 +24,27 @@
         - [音频](tools/object/audio/index.md)
         - [视频](tools/object/video/index.md)
         - [动画](tools/object/animation/index.md)
-    - [互动组件](tools/component/index.md)
+    - [题目模板](tools/component/index.md)
+    - [个人题库](tools/personalcomponent/index.md)
 - [素材库](resource/index.md)
 - [动作动效](effect/index.md)
 - [交互事件](event/index.md)
 - [模式](mode/index.md)
-- [互动视频制作](make-interactive-video/index.md)
+
+## 模板手册
+
+- [作文模板](tools/component/writting/index.md)
+- [创作模板](tools/component/creating/index.md)
+- [复述模板](tools/component/retell/index.md)
+- [配音模板](tools/component/dub/index.md)
+- [CrossWord模板](tools/component/crossword/index.md)
+- [单词学习模板](tools/component/wordstudy/index.md)
+- [选择题模板](tools/component/choice_general/index.md)
+- [填空题模板](tools/component/fill/index.md)
+- [拖拽题模板](tools/component/drag_general/index.md)
+- [选择推送题模板](tools/component/pushtemplate_choice/index.md)
+- [填空推送题模板](tools/component/pushtemplate_fill/index.md)
+- [拖拽推送题模板](tools/component/pushtemplate_drag/index.md)
 
 ## 研发手册
 

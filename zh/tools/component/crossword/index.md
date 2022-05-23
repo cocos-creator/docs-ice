@@ -1,6 +1,6 @@
 # CrossWord模板
 
-工具栏点击**题目模板**，下载完**CrossWord模板**后，便可选择CrossWord模板，将模板插入到编辑器内。
+工具栏点击 **题目模板**，下载完 **CrossWord模板** 后，便可选择 CrossWord 模板，将模板插入到编辑器内。
 
 ## CrossWord模板属性配置
 

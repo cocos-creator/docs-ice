@@ -4,7 +4,7 @@
 
 ## CrossWord 模板属性配置
 
-选中CrossWord模板，便可在编辑右侧的属性面板内，进行模板的属性配置。
+选中 CrossWord 模板，便可在编辑右侧的属性面板内，进行模板的属性配置。
 
 ![Crossword](img/Crossword.png)
 

@@ -32,4 +32,4 @@
 
 1. 点击 **菜单栏 -> 模式** 切换到 **研发模式**，即可切换使用 Cocos Creator 2.4.6。
 
-2. 点击 **菜单栏 -> 教育编辑器 -> 课程广场**，下载老师制作好的课程，选择需要发布的课程，执行构建发布。具体操作可参考 [**Cocos Creator 用户手册 — 跨平台发布**](https://docs.cocos.com/creator/manual/zh/publish/)。
+2. 点击 **菜单栏 -> 教育编辑器 -> 课程广场**，下载老师制作好的课程，选择需要发布的课程，执行构建发布。具体操作可参考 [**Cocos Creator 用户手册 — 跨平台发布**](https://docs.cocos.com/creator/2.4/manual/zh/publish/)。

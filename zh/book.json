@@ -11,15 +11,19 @@
                 "links": [
                     {
                         "name": "手册文档",
-                        "link": "https://docs.cocos.com/ice/1.6/manual/zh"
+                        "link": "https://docs.cocos.com/ice/1.7/manual/zh"
                     }
                 ]
             }
         ],
         "version": [
             {
-                "name": "1.6",
+                "name": "1.7",
                 "links": [
+                    {
+                        "name": "1.7",
+                        "link": "https://docs.cocos.com/ice/1.7/manual/zh"
+                    },
                     {
                         "name": "1.6",
                         "link": "https://docs.cocos.com/ice/1.6/manual/zh"

@@ -7,16 +7,16 @@
 - **JSON 配置示例**：
 
     ```
-    'client-mode': {
+    "client-mode": {
         // 是否启用教师端可见功能
-        enable: false,
+        "enable": false,
     }
     ```
 
 - 此时在 ICE 里面选中任意节点，就能看到仅教师端可见的开关，老师只要打开这个开关，就可以实现教师端可见的功能。
 
-- 客户端需要在启动的时候告诉运行时，当前运行的是否是教师端，如下字段为 `true` 就是运行在教师端，此时，学生端会自动隐藏上面选中的节点
+    ![教师端可见](img/teacher.png)
 
-    ```
-    edu.eduGame.clientMode.setCustomData({isTeacherClient:true});
-    ```
+- 可以在预览窗口进行学生端画面或者教师端画面的预览。
+
+    ![预览](img/preview.png)

@@ -43,6 +43,7 @@
     - [分辨率配置](developer/configure/resolution/index.md)
     - [工具栏配置](developer/configure/toolbar/index.md)
     - [页面配置](developer/configure/page/index.md)
+    - [多端控制配置](developer/configure/multi-terminal/index.md)
     - [对象配置](developer/configure/object/index.md)
         - [通用配置](developer/configure/object/properties/index.md)
         - [文字配置](developer/configure/object/word/index.md)

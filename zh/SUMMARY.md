@@ -28,6 +28,7 @@
         - [音频](tools/object/audio/index.md)
         - [视频](tools/object/video/index.md)
         - [动画](tools/object/animation/index.md)
+        - [公式](tools/object/formula/index.md)
     - [互动组件](tools/component/index.md)
 - [素材库](resource/index.md)
 - [动作动效](effect/index.md)

@@ -26,11 +26,11 @@ Windows 版的安装程序是一个 `.zip` 压缩包，通常命名会是 `Cocos
 
 ### Mac 安装说明
 
-Mac 版 Cocos ICE 的安装程序是一个 `.zip` 压缩包，通常命名会是 `Cocos ICE_vX.X.X_20XXXXXX_mac.zip`，其中 `vX.X.X` 是 Cocos ICE 的版本号，如 v1.1.1，后面的一串数字是版本日期编号。
+Mac 版 Cocos ICE 的安装程序是一个 `.dmg` 文件，通常命名会是 `Cocos ICE_vX.X.X_20XXXXXX_mac.dmg`，其中 `vX.X.X` 是 Cocos ICE 的版本号，如 v1.1.1，后面的一串数字是版本日期编号。
 
-双击或右键解压压缩包，然后将解压后的文件夹内的 `Cocos ICE.app` 拖拽到您的应用程序文件夹，或任意其他位置。然后双击拖拽出来的 `Cocos ICE.app` 就可以开始使用了。
+双击或右键打开安装包，然后拖动 Cocos ICE 到 Application 文件夹，即可安装。然后打开 Mac 的启动台或应用程序文件夹即可找到 Cocos ICE 点击打开。
 
-> **注意**：由于 Mac 的限制，从 zip 解压安装的应用必须移动到任意其他文件夹。解压后若不移动文件位置，系统会识别它仍然在临时文件夹，导致运行失败。
+![安装](img/install_mac.png)
 
 ## 3. 定制安装包
 

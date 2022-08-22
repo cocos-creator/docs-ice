@@ -13,6 +13,7 @@
 - [分辨率配置](resolution/index.md)
 - [工具栏配置](toolbar/index.md)
 - [页面配置](page/index.md)
+- [多端控制配置](multi-terminal/index.md)
     - [对象配置](object/index.md)
         - [通用配置](object/properties/index.md)
         - [文字配置](object/word/index.md)

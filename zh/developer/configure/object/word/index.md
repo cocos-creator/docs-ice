@@ -30,15 +30,15 @@
 
 - **JSON 配置示例**：
 
-  ```json
-  {
+    ```json
+    {
     "font-families": [
       { "label": "楷体", "value": "kaiti" }
     ]
-  }
-  ```
+    }
+    ```
 
-  `label` 是列表显示的名字，`value` 为该选项的值，这个值必须是编辑器中的某个字体资源 uuid，否则也无法正常工作。uuid 需要通过以下方式获取：
+    `label` 是列表显示的名字，`value` 为该选项的值，这个值必须是编辑器中的某个字体资源 uuid，否则也无法正常工作。uuid 需要通过以下方式获取：
 
     ![uuid](./img/uuid.png)
 

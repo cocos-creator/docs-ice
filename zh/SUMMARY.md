@@ -7,7 +7,7 @@
 - [新手上路](getting-started/index.md)
     - [下载和安装](getting-started/install/index.md)
     - [注册和授权](getting-started/license/index.md)
-    - [使用课程广场](getting-started/lesson-square/index.md)
+    - [使用课件广场](getting-started/lesson-square/index.md)
     - [编辑器界面总览](getting-started/interface-overview/index.md)
     - [课件制作](getting-started/make-courseware/index.md)
     - [互动视频制作](getting-started/make-interactive-video/index.md)
@@ -18,7 +18,7 @@
 
 ## 编辑器手册
 
-- [课程页面](page/index.md)
+- [课件页面](page/index.md)
 - [场景](scene/index.md)
 - [工具栏](tools/index.md)
     - [基础对象](tools/object/index.md)

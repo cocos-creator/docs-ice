@@ -117,7 +117,7 @@ export default class VideoPlayAction extends Action {
 
     `page` 目前应用在页面跳转的跳转页面参数上，`enumListType = 'page'` 时，该属性会自动变为带可选值的下拉框类型，供用户选择。
 
-    可选值来自当前课程的所有页面。
+    可选值来自当前课件的所有页面。
 
 - video
 

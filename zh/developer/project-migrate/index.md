@@ -304,7 +304,7 @@ export default class FrogImageElement extends EduElementAbstract {
 
 ### 预览组件
 
-Cocos ICE 切换到课程制作模式，可以看到游戏组件面板中已经出现我们的青蛙游戏：
+Cocos ICE 切换到课件制作模式，可以看到游戏组件面板中已经出现我们的青蛙游戏：
 
 <img src='./img/gamePanel.jpg' alt='游戏面板' width='500'>
 

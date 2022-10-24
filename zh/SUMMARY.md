@@ -29,12 +29,13 @@
         - [视频](tools/object/video/index.md)
         - [动画](tools/object/animation/index.md)
         - [公式](tools/object/formula/index.md)
-    - [互动组件](tools/component/index.md)
 - [素材库](resource/index.md)
+    - [模板库](resource/template/index.md)
+    - [工具库](resource/component/index.md)
 - [动作动效](effect/index.md)
 - [交互事件](event/index.md)
 - [模式](mode/index.md)
-- [互动视频制作](make-interactive-video/index.md)
+- [互动视频制作](getting-started/make-interactive-video/index.md)
 
 ## 研发手册
 

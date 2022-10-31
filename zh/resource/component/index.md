@@ -29,6 +29,7 @@
 互动视频组件在制作互动视频时常用，需要切换到 [互动视频制作模式](../../getting-started/make-interactive-video/index.md) 使用。
 
 ![制作](../../getting-started/make-interactive-video/img/interactive_video2.png)
+
 ### 编辑视频互动组件
 
 在场景或互动视频编辑面板选中添加的视频互动组件，即可在 **属性设置** 面板和 **交互事件** 面板设置参数。

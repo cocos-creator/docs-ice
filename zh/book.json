@@ -11,7 +11,7 @@
                 "links": [
                     {
                         "name": "手册文档",
-                        "link": "https://docs.cocos.com/ice/1.8/manual/zh"
+                        "link": "https://docs.cocos.com/ice/2.0/manual/zh"
                     }
                 ]
             }
@@ -20,6 +20,10 @@
             {
                 "name": "1.8",
                 "links": [
+                    {
+                        "name": "2.0",
+                        "link": "https://docs.cocos.com/ice/2.0/manual/zh"
+                    },
                     {
                         "name": "1.8",
                         "link": "https://docs.cocos.com/ice/1.8/manual/zh"

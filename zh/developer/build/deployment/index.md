@@ -8,7 +8,7 @@ Cocos ICE 课件创作完成后需要简单部署才能放在外网供他人使�
 
 <img src="./img/publish.jpg" alt="点击发布" height='400'> <img src="./img/publish2.jpg" alt="点击发布" height='400'>
 
-课程发布格式默认为 **HTML** 格式，发布成功后文件结构如下：
+课件发布格式默认为 **HTML** 格式，发布成功后文件结构如下：
 
 ![点击发布](img/build.jpg)
 

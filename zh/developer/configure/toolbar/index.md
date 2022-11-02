@@ -69,7 +69,7 @@ export enum ToolbarRole {
     divider = 'divider',
 
     /**
-     * 打开课程广场
+     * 打开课件广场
      */
     openCoursePlaza = 'openCoursePlaza',
 
@@ -165,7 +165,7 @@ export enum ToolbarRole {
 ```json
 {
     "id": "custom1",
-    "label": "课程",
+    "label": "课件",
     "icon": "courses"
 }
 ```
@@ -228,7 +228,7 @@ export enum ToolbarRole {
         "center": [
             {
                 "id": "custom1",
-                "label": "课程",
+                "label": "课件",
                 "icon": "courses"
             },
 

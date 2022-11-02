@@ -21,6 +21,13 @@
                 "name": "1.4",
                 "links": [
                     {
+<<<<<<< HEAD
+=======
+                        "name": "2.0",
+                        "link": "https://docs.cocos.com/ice/2.0/manual/zh"
+                    },
+                    {
+>>>>>>> v1.3-release
                         "name": "1.8",
                         "link": "https://docs.cocos.com/ice/1.8/manual/zh"
                     },

@@ -1,5 +1,5 @@
 {
-    "language" : "zh-hans",
+    "language": "zh-hans",
     "structure": {
         "summary": "SUMMARY.md",
         "readme": "index.md"
@@ -18,7 +18,7 @@
         ],
         "version": [
             {
-                "name": "1.8",
+                "name": "2.0",
                 "links": [
                     {
                         "name": "2.0",
